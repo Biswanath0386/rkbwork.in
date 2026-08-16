@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     html {
@@ -19,62 +20,185 @@
     }
 
     body {
-      background: #f5f7fa;
-      color: #222;
+      background: #f4f8ff;
+      color: #07132f;
     }
+
+    /* ================= HEADER ================= */
 
     header {
-      background: #111827;
+      background: linear-gradient(135deg, #020b20, #071b45);
       color: white;
+      padding: 24px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      min-height: 125px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo {
+      width: 78px;
+      height: 78px;
+      border: 3px solid #168cff;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 40px 20px;
+      line-height: 1;
     }
 
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 8px;
+    .logo strong {
+      font-size: 22px;
     }
 
-    header p {
-      color: #d1d5db;
+    .logo span {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .brand-text h1 {
+      font-size: 35px;
+      letter-spacing: -1px;
+    }
+
+    .brand-text h1 span {
+      color: #168cff;
+    }
+
+    .brand-text p {
+      margin-top: 7px;
+      color: #dbe7fa;
+      font-size: 16px;
     }
 
     nav {
-      background: white;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 7px;
     }
 
     nav a {
+      color: white;
       text-decoration: none;
-      color: #111827;
+      padding: 13px 18px;
+      border-radius: 9px;
       font-weight: bold;
-      margin: 0 10px;
+      font-size: 15px;
+      transition: .3s;
     }
 
-    .intro {
+    nav a:hover,
+    nav a.active {
+      background: #075dcc;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
       text-align: center;
-      padding: 40px 20px 25px;
+      padding: 55px 20px 60px;
+      background:
+        radial-gradient(circle at top, #ffffff 0, #f7faff 55%, #eaf3ff 100%);
     }
 
-    .intro h2 {
-      font-size: 30px;
-      margin-bottom: 12px;
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 110%;
+      height: 180px;
+      bottom: -110px;
+      border-top: 2px solid #cbdfff;
+      border-radius: 50%;
+      opacity: .7;
     }
 
-    .intro p {
-      color: #666;
-      line-height: 1.6;
+    .hero::before {
+      left: -10%;
+      transform: rotate(5deg);
     }
+
+    .hero::after {
+      right: -10%;
+      transform: rotate(-5deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .welcome {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 30px;
+      background: #e4f0ff;
+      color: #075dcc;
+      font-weight: bold;
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      font-size: 43px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 span {
+      color: #1764d8;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      color: #42516b;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .hero-line {
+      width: 70px;
+      height: 4px;
+      border-radius: 10px;
+      background: #126ce0;
+      margin: 25px auto 0;
+    }
+
+    /* ================= SERVICES ================= */
 
     .services {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
-      padding: 20px;
+      padding: 45px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #65738a;
+      font-size: 16px;
     }
 
     .category {
@@ -82,97 +206,254 @@
     }
 
     .category h2 {
-      background: #111827;
+      background: linear-gradient(135deg, #071b45, #0a4fa8);
       color: white;
-      padding: 14px 18px;
-      border-radius: 10px;
+      padding: 17px 20px;
+      border-radius: 13px;
       font-size: 21px;
       margin-bottom: 15px;
+      box-shadow: 0 7px 18px rgba(0, 55, 130, .15);
     }
 
     .service-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 14px;
     }
 
     .service {
+      position: relative;
       background: white;
-      padding: 18px;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      padding: 20px 22px;
+      border-radius: 13px;
+      box-shadow: 0 6px 18px rgba(0, 35, 90, .09);
+      border: 1px solid #e1eafa;
       text-decoration: none;
-      color: #222;
+      color: #101c34;
       font-weight: bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: .3s;
+      overflow: hidden;
+    }
+
+    .service::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #126ce0;
     }
 
     .service span {
-      color: #777;
-      font-size: 20px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #eaf3ff;
+      color: #126ce0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      transition: .3s;
     }
 
     .service:hover {
-      background: #f0f2f5;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0, 35, 90, .14);
+      border-color: #bcd6ff;
     }
 
+    .service:hover span {
+      background: #126ce0;
+      color: white;
+    }
+
+    /* ================= NOTE ================= */
+
     .note {
-      max-width: 900px;
-      margin: 10px auto 40px;
-      padding: 18px;
-      background: #fff;
-      border-radius: 10px;
+      max-width: 1000px;
+      margin: 0 auto 45px;
+      padding: 20px 25px;
+      background: #eaf3ff;
+      border-left: 5px solid #126ce0;
+      border-radius: 12px;
       text-align: center;
-      color: #666;
-      line-height: 1.6;
+      color: #53627a;
+      line-height: 1.7;
       font-size: 14px;
     }
 
+    .note strong {
+      color: #075dcc;
+    }
+
+    /* ================= CONTACT ================= */
+
     .contact {
-      background: #111827;
+      max-width: 1100px;
+      margin: 0 auto 25px;
+      border-radius: 20px;
+      padding: 35px 45px;
+      background:
+        radial-gradient(circle at 80% 30%, #0b2b68 0, #031638 45%, #020b20 100%);
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      box-shadow: 0 10px 30px rgba(0, 20, 60, .18);
+    }
+
+    .contact h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .contact h2 span {
+      color: #0b8cff;
     }
 
     .contact p {
-      color: #d1d5db;
+      color: #dce6f7;
+      font-size: 17px;
       margin: 8px;
     }
 
     .whatsapp {
       display: inline-block;
-      margin-top: 15px;
-      padding: 13px 22px;
-      background: white;
-      color: #111827;
+      margin-top: 18px;
+      padding: 14px 28px;
+      background: #08c952;
+      color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
+      font-size: 17px;
+      transition: .3s;
     }
 
+    .whatsapp:hover {
+      transform: translateY(-3px);
+      background: #06ad46;
+    }
+
+    /* ================= FOOTER ================= */
+
     footer {
-      background: #0b1120;
-      color: #9ca3af;
+      background: #020b20;
+      color: #aeb9cb;
       text-align: center;
-      padding: 20px;
+      padding: 22px 15px;
       font-size: 14px;
     }
 
-    @media (max-width: 700px) {
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 850px) {
+
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+      }
+
+      .brand {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .logo {
+        width: 82px;
+        height: 82px;
+      }
+
+      .brand-text h1 {
+        font-size: 32px;
+      }
+
+      .brand-text p {
+        font-size: 14px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        gap: 2px;
+      }
+
+      nav a {
+        padding: 11px 10px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 40px 15px 50px;
+      }
+
+      .hero h2 {
+        font-size: 31px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .services {
+        padding: 35px 15px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
       .service-list {
         grid-template-columns: 1fr;
       }
 
-      header h1 {
-        font-size: 32px;
+      .category h2 {
+        font-size: 19px;
       }
 
-      nav a {
-        margin: 0 6px;
+      .note {
+        margin: 0 15px 30px;
+      }
+
+      .contact {
+        margin: 20px 15px;
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero h2 {
+        font-size: 27px;
+      }
+
+      .welcome {
         font-size: 14px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .service {
+        padding: 17px;
+        font-size: 15px;
+      }
+
+      .category h2 {
+        font-size: 17px;
+      }
+
+      .contact h2 {
+        font-size: 26px;
+      }
+
+      .contact p {
+        font-size: 15px;
       }
     }
   </style>
@@ -180,43 +461,72 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- ================= HEADER ================= -->
 
   <header>
-    <h1>RKB ONLINE</h1>
-    <p>CSC Centre • Digital & Online Services</p>
+
+    <div class="brand">
+
+      <div class="logo">
+        <strong>RKB</strong>
+        <span>ONLINE</span>
+      </div>
+
+      <div class="brand-text">
+        <h1>RKB <span>ONLINE</span></h1>
+        <p>CSC Centre • Digital & Online Services</p>
+      </div>
+
+    </div>
+
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="csc-services.html" class="active">▦ Services</a>
+      <a href="#contact">📞 Contact</a>
+    </nav>
+
   </header>
 
 
-  <!-- NAVIGATION -->
+  <!-- ================= HERO ================= -->
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="csc-services.html">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <section class="hero">
 
+    <div class="hero-content">
 
-  <!-- INTRO -->
+      <div class="welcome">
+        WELCOME TO RKB ONLINE
+      </div>
 
-  <section class="intro">
+      <h2>
+        Your Trusted CSC
+        <span>Digital Service Centre</span>
+      </h2>
 
-    <h2>CSC Services</h2>
+      <p>
+        Access CSC, government, identity, certificate,
+        education, banking and other online services
+        conveniently from one place.
+      </p>
 
-    <p>
-      Select the service you need to view
-      details and required documents.
-    </p>
+      <div class="hero-line"></div>
+
+    </div>
 
   </section>
 
 
-  <!-- SERVICES -->
+  <!-- ================= SERVICES ================= -->
 
   <section class="services">
 
+    <div class="section-title">
+      <h2>CSC Services</h2>
+      <p>Select the service you need to continue</p>
+    </div>
 
-    <!-- IDENTITY SERVICES -->
+
+    <!-- IDENTITY -->
 
     <div class="category">
 
@@ -254,7 +564,7 @@
     </div>
 
 
-    <!-- CERTIFICATE SERVICES -->
+    <!-- CERTIFICATE -->
 
     <div class="category">
 
@@ -474,23 +784,25 @@
   </section>
 
 
-  <!-- NOTE -->
+  <!-- ================= NOTE ================= -->
 
   <div class="note">
 
     <strong>Note:</strong>
-    Required documents may vary according to
-    the service and applicant. Please contact
-    RKB ONLINE for confirmation before applying.
+    Required documents may vary according to the
+    service and applicant. Please contact RKB ONLINE
+    for confirmation before applying.
 
   </div>
 
 
-  <!-- CONTACT -->
+  <!-- ================= CONTACT ================= -->
 
   <section class="contact" id="contact">
 
-    <h2>Contact RKB ONLINE</h2>
+    <h2>
+      Contact <span>RKB ONLINE</span>
+    </h2>
 
     <p>📍 AT/PO-TUSAR, 759126</p>
 
@@ -498,6 +810,7 @@
 
     <a
       href="https://wa.me/918908880386"
+      target="_blank"
       class="whatsapp">
       💬 WhatsApp
     </a>
@@ -505,7 +818,7 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
 
   <footer>
     © 2026 RKB WORK • RKB ONLINE
