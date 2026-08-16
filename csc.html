@@ -1,336 +1,1728 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>RKB ONLINE | CSC Centre</title>
+<title>RKB ONLINE | CSC Services</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f8fd;
+    color:#101d38;
+}
+
+:root{
+    --blue:#0867e8;
+    --dark:#03183b;
+    --dark2:#073b83;
+    --green:#14bd50;
+    --orange:#ff8500;
+    --purple:#6437d8;
+    --border:#e4eaf3;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    min-height:82px;
+    background:#03152f;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:3px solid #1689ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    font-weight:900;
+    background:#071d3d;
+}
+
+.logo-text h2{
+    font-size:25px;
+    line-height:1;
+}
+
+.logo-text p{
+    color:#c8d5e9;
+    font-size:12px;
+    margin-top:5px;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+    padding:31px 0 27px;
+    position:relative;
+}
+
+.nav a.active:after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:20px;
+    height:3px;
+    background:#1674ff;
+    border-radius:5px;
+}
+
+.header-wa{
+    background:#14bd50;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:7px;
+    font-size:13px;
+    font-weight:800;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:390px;
+    color:white;
+    background:
+        radial-gradient(
+            circle at 8% 25%,
+            rgba(0,120,255,.25),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 65%,
+            rgba(0,102,255,.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            120deg,
+            #031536,
+            #062c68 60%,
+            #073e89
+        );
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    right:-180px;
+    top:-180px;
+    border:1px solid rgba(60,150,255,.22);
+    border-radius:50%;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    width:370px;
+    height:370px;
+    right:35px;
+    top:-60px;
+    border:1px solid rgba(60,150,255,.16);
+    border-radius:50%;
+}
+
+.hero-inner{
+    max-width:1200px;
+    min-height:390px;
+    margin:auto;
+    padding:45px 30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    position:relative;
+    z-index:2;
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.badge{
+    display:inline-block;
+    background:#0868df;
+    padding:8px 15px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:900;
+    margin-bottom:14px;
+}
+
+.hero h1{
+    font-size:52px;
+    line-height:1.05;
+    margin-bottom:9px;
+}
+
+.hero-sub{
+    font-size:22px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.hero-sub span{
+    color:#0878f9;
+    padding:0 8px;
+}
+
+.hero-description{
+    color:#dce8fa;
+    font-size:16px;
+    line-height:1.7;
+    max-width:560px;
+}
+
+
+/* =========================
+   HERO TRUST
+========================= */
+
+.trust-row{
+    display:flex;
+    gap:35px;
+    margin-top:28px;
+    flex-wrap:wrap;
+}
+
+.trust{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.trust-icon{
+    width:44px;
+    height:44px;
+    background:#0868eb;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+}
+
+.trust strong{
+    display:block;
+    font-size:12px;
+}
+
+.trust small{
+    color:#d0ddf0;
+    font-size:10px;
+}
+
+
+/* =========================
+   CSC ILLUSTRATION
+========================= */
+
+.hero-visual{
+    width:390px;
+    min-width:390px;
+    height:280px;
+    position:relative;
+}
+
+.monitor{
+    position:absolute;
+    width:330px;
+    height:205px;
+    right:0;
+    top:10px;
+    background:#f5f7fa;
+    border:8px solid #c9d2df;
+    border-radius:14px;
+    box-shadow:0 25px 45px rgba(0,0,0,.35);
+    overflow:hidden;
+}
+
+.monitor-screen{
+    height:100%;
+    background:
+        linear-gradient(
+            135deg,
+            #f7fbff,
+            #e8f1ff
+        );
+    padding:18px;
+    color:#08265a;
+}
+
+.screen-header{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:900;
+    font-size:16px;
+    border-bottom:1px solid #d7e2f1;
+    padding-bottom:10px;
+}
+
+.screen-logo{
+    width:30px;
+    height:30px;
+    background:#0867e8;
+    border-radius:50%;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:10px;
+}
+
+.screen-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin-top:15px;
+}
+
+.screen-card{
+    height:58px;
+    border-radius:8px;
+    background:white;
+    box-shadow:0 3px 10px rgba(0,0,0,.07);
+    padding:8px;
+    font-size:10px;
+    font-weight:700;
+}
+
+.screen-icon{
+    font-size:19px;
+    display:block;
+    margin-bottom:3px;
+}
+
+.monitor-stand{
+    position:absolute;
+    width:80px;
+    height:30px;
+    background:#aeb9c8;
+    right:125px;
+    bottom:30px;
+    clip-path:polygon(
+        25% 0,
+        75% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+.monitor-base{
+    position:absolute;
+    width:150px;
+    height:12px;
+    background:#aeb9c8;
+    right:90px;
+    bottom:18px;
+    border-radius:20px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 20px 45px;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+    text-align:center;
+    margin-bottom:27px;
+}
+
+.section-title h2{
+    color:#102e63;
+    font-size:29px;
+}
+
+.section-title h2:after{
+    content:"";
+    display:block;
+    width:48px;
+    height:4px;
+    background:#0867e8;
+    margin:8px auto;
+    border-radius:5px;
+}
+
+.section-title p{
+    color:#60708b;
+    font-size:14px;
+}
+
+
+/* =========================
+   CSC SERVICES
+========================= */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.service{
+    background:white;
+    min-height:230px;
+    border:1px solid #e5eaf2;
+    border-radius:12px;
+    padding:18px;
+    text-decoration:none;
+    color:#101d38;
+    position:relative;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(20,50,100,.07);
+    transition:.3s;
+    overflow:hidden;
+}
+
+.service:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 32px rgba(20,70,160,.15);
+    border-color:#cbdcf5;
+}
+
+.number{
+    position:absolute;
+    left:15px;
+    top:15px;
+    width:34px;
+    height:28px;
+    border-radius:7px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:12px;
+    font-weight:900;
+}
+
+.service-icon{
+    width:76px;
+    height:76px;
+    border-radius:50%;
+    margin:12px auto 14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:36px;
+    color:white;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+.service h3{
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.service p{
+    color:#6a7890;
+    font-size:12px;
+    line-height:1.5;
+    min-height:38px;
+}
+
+.apply-btn{
+    display:inline-block;
+    margin-top:12px;
+    border:1px solid #d4e0f0;
+    color:#075bea;
+    border-radius:20px;
+    padding:7px 18px;
+    font-size:11px;
+    font-weight:900;
+    transition:.3s;
+}
+
+.service:hover .apply-btn{
+    background:#075bea;
+    color:white;
+}
+
+
+/* SERVICE COLORS */
+
+.service:nth-child(1) .number,
+.service:nth-child(1) .service-icon{
+    background:#1261e9;
+}
+
+.service:nth-child(2) .number,
+.service:nth-child(2) .service-icon{
+    background:#19b956;
+}
+
+.service:nth-child(3) .number,
+.service:nth-child(3) .service-icon{
+    background:#ff8200;
+}
+
+.service:nth-child(4) .number,
+.service:nth-child(4) .service-icon{
+    background:#6537d8;
+}
+
+.service:nth-child(5) .number,
+.service:nth-child(5) .service-icon{
+    background:#0aa4ad;
+}
+
+.service:nth-child(6) .number,
+.service:nth-child(6) .service-icon{
+    background:#e92770;
+}
+
+
+/* =========================
+   INFORMATION SECTION
+========================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-top:18px;
+}
+
+.info-box{
+    background:white;
+    border:1px solid #e3e9f1;
+    border-radius:12px;
+    padding:22px;
+    box-shadow:0 6px 20px rgba(20,50,100,.06);
+}
+
+.info-box h2{
+    color:#075bd3;
+    font-size:18px;
+    margin-bottom:14px;
+}
+
+.info-box p{
+    color:#60708b;
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.feature{
+    background:white;
+    border:1px solid #e5eaf2;
+    border-radius:10px;
+    padding:17px 10px;
+    text-align:center;
+    box-shadow:0 5px 16px rgba(20,50,100,.05);
+}
+
+.feature-icon{
+    width:45px;
+    height:45px;
+    margin:auto auto 9px;
+    background:#edf4ff;
+    color:#0867e8;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+}
+
+.feature h3{
+    font-size:13px;
+}
+
+.feature p{
+    color:#718098;
+    font-size:10px;
+    margin-top:4px;
+}
+
+
+/* =========================
+   WHATSAPP ASSISTANCE
+========================= */
+
+.assistance{
+    margin-top:18px;
+    background:
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(30,130,255,.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            110deg,
+            #04245a,
+            #063c8d
+        );
+    border-radius:12px;
+    color:white;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.assistance h2{
+    font-size:21px;
+    margin-bottom:7px;
+}
+
+.assistance p{
+    color:#d9e6f8;
+    font-size:12px;
+    line-height:1.6;
+}
+
+.wa-btn{
+    background:#14bd50;
+    color:white;
+    text-decoration:none;
+    padding:13px 25px;
+    border-radius:7px;
+    font-size:13px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.wa-btn:hover{
+    background:#0da843;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    margin-top:18px;
+    background:linear-gradient(
+        100deg,
+        #06255c,
+        #073e8e
+    );
+    color:white;
+    border-radius:10px;
+    padding:20px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.contact h2{
+    font-size:19px;
+    margin-bottom:7px;
+}
+
+.contact p{
+    font-size:12px;
+    color:#d9e5f5;
+    margin:4px 0;
+}
+
+.contact-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.call,
+.whatsapp{
+    display:inline-block;
+    min-width:170px;
+    padding:12px 20px;
+    text-align:center;
+    text-decoration:none;
+    border-radius:7px;
+    font-weight:900;
+    font-size:13px;
+}
+
+.call{
+    background:white;
+    color:#075bea;
+}
+
+.whatsapp{
+    background:#14bd50;
+    color:white;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back{
+    display:block;
+    text-align:center;
+    margin:25px 0 5px;
+    text-decoration:none;
+    color:#12305e;
+    font-size:13px;
+    font-weight:800;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#03183b;
+    color:#aebbd0;
+    text-align:center;
+    padding:17px;
+    font-size:11px;
+}
+
+.footer-nav{
+    margin-bottom:9px;
+}
+
+.footer-nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.top{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:40px;
+    height:40px;
+    background:#075bea;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    z-index:500;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+    .nav{
+        gap:15px;
     }
 
-    body {
-      background: #f5f7fa;
-      color: #222;
+    .hero-visual{
+        display:none;
     }
 
-    header {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
+    .hero-content{
+        max-width:100%;
     }
 
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 8px;
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    header p {
-      color: #d1d5db;
-      font-size: 16px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px){
+
+    .header{
+        min-height:auto;
+        padding:12px 15px;
     }
 
-    nav {
-      background: white;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    .logo{
+        width:43px;
+        height:43px;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #111827;
-      font-weight: bold;
-      margin: 0 12px;
+    .logo-text h2{
+        font-size:19px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 35px 18px 50px;
+    .logo-text p{
+        font-size:9px;
     }
 
-    .intro {
-      background: white;
-      text-align: center;
-      padding: 35px 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
+    .nav{
+        display:none;
     }
 
-    .intro .icon {
-      font-size: 55px;
-      margin-bottom: 15px;
+    .header-wa{
+        padding:9px 11px;
+        font-size:10px;
     }
 
-    .intro h2 {
-      font-size: 30px;
-      margin-bottom: 12px;
+    .hero{
+        min-height:390px;
     }
 
-    .intro p {
-      color: #666;
-      line-height: 1.6;
+    .hero-inner{
+        min-height:390px;
+        padding:40px 20px;
     }
 
-    .services-title {
-      text-align: center;
-      margin: 30px 0 20px;
+    .hero h1{
+        font-size:39px;
     }
 
-    .services-title h2 {
-      font-size: 28px;
-      margin-bottom: 8px;
+    .hero-sub{
+        font-size:19px;
     }
 
-    .services-title p {
-      color: #666;
+    .hero-description{
+        font-size:14px;
     }
 
-    .service-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    .trust-row{
+        gap:12px;
     }
 
-    .service {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: white;
-      color: #111827;
-      text-decoration: none;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-      font-size: 19px;
-      font-weight: bold;
-      transition: 0.2s;
+    .trust{
+        min-width:130px;
     }
 
-    .service:hover {
-      transform: translateY(-2px);
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
     }
 
-    .service span {
-      font-size: 28px;
-      color: #777;
+    .service{
+        min-height:205px;
+        padding:14px 9px;
     }
 
-    .contact {
-      background: #111827;
-      color: white;
-      text-align: center;
-      margin-top: 40px;
-      padding: 35px 20px;
-      border-radius: 16px;
+    .service-icon{
+        width:60px;
+        height:60px;
+        font-size:28px;
+        margin-top:13px;
     }
 
-    .contact h2 {
-      margin-bottom: 15px;
+    .service h3{
+        font-size:14px;
     }
 
-    .contact p {
-      color: #d1d5db;
-      margin: 8px 0;
-      line-height: 1.5;
+    .service p{
+        font-size:10px;
     }
 
-    .buttons {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
+    .info-grid{
+        grid-template-columns:1fr;
     }
 
-    .button {
-      display: inline-block;
-      text-decoration: none;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-weight: bold;
+    .features{
+        grid-template-columns:1fr 1fr;
     }
 
-    .call {
-      background: white;
-      color: #111827;
+    .assistance{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
-    .whatsapp {
-      background: #25D366;
-      color: white;
+    .wa-btn{
+        width:100%;
+        text-align:center;
     }
 
-    .back {
-      display: block;
-      text-align: center;
-      margin-top: 30px;
-      color: #111827;
-      text-decoration: none;
-      font-weight: bold;
+    .contact{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
     }
 
-    footer {
-      background: #0b1120;
-      color: #9ca3af;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
+    .contact-buttons{
+        width:100%;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 32px;
-      }
-
-      .intro h2 {
-        font-size: 26px;
-      }
-
-      .service {
-        font-size: 17px;
-        padding: 18px;
-      }
+    .call,
+    .whatsapp{
+        min-width:0;
+        flex:1;
     }
-  </style>
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:400px){
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .service h3{
+        font-size:12px;
+    }
+
+    .service p{
+        min-height:35px;
+    }
+
+    .apply-btn{
+        padding:6px 11px;
+    }
+
+    .contact-buttons{
+        flex-direction:column;
+    }
+
+    .call,
+    .whatsapp{
+        width:100%;
+    }
+
+}
+
+</style>
 </head>
 
-<body>
 
-  <header>
-    <h1>RKB ONLINE</h1>
-    <p>CSC Centre • Digital & Online Services</p>
-  </header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="csc.html">CSC</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main class="container">
-
-    <section class="intro">
-      <div class="icon">💻</div>
-
-      <h2>RKB ONLINE</h2>
-
-      <p>
-        Welcome to RKB ONLINE, your local CSC Centre
-        for digital and online services.
-      </p>
-    </section>
+<body id="top">
 
 
-    <section>
+<!-- ================= HEADER ================= -->
 
-      <div class="services-title">
-        <h2>📋 CSC Services</h2>
-        <p>Select a service to see related information.</p>
-      </div>
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="logo">
+            RKB
+        </div>
+
+        <div class="logo-text">
+
+            <h2>RKB ONLINE</h2>
+
+            <p>
+                CSC Centre • Digital & Online Services
+            </p>
+
+        </div>
+
+    </div>
 
 
-      <div class="service-list">
+    <nav class="nav">
 
-        <!-- PAN CARD -->
-        <a href="pan.html" class="service">
-          <span>🪪 PAN Card</span>
-          <span>›</span>
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="csc.html" class="active">
+            CSC Services
+        </a>
+
+        <a href="aadhar.html">
+            Aadhaar Services
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <a
+        class="header-wa"
+        href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE%2C%20I%20need%20CSC%20Service"
+        target="_blank">
+
+        ☘ WhatsApp Us
+
+    </a>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+
+    <div class="hero-content">
+
+        <span class="badge">
+            CSC DIGITAL SERVICES
+        </span>
+
+        <h1>
+            CSC Services
+        </h1>
+
+        <div class="hero-sub">
+
+            Fast
+
+            <span>•</span>
+
+            Secure
+
+            <span>•</span>
+
+            Reliable
+
+        </div>
+
+        <p class="hero-description">
+
+            RKB ONLINE provides convenient digital and
+            online assistance for various CSC related services.
+
+        </p>
+
+
+        <div class="trust-row">
+
+
+            <div class="trust">
+
+                <div class="trust-icon">
+                    🛡
+                </div>
+
+                <div>
+
+                    <strong>
+                        Trusted Service
+                    </strong>
+
+                    <small>
+                        Reliable Process
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="trust">
+
+                <div class="trust-icon">
+                    ◷
+                </div>
+
+                <div>
+
+                    <strong>
+                        Quick Assistance
+                    </strong>
+
+                    <small>
+                        Save Your Time
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="trust">
+
+                <div class="trust-icon">
+                    ♟
+                </div>
+
+                <div>
+
+                    <strong>
+                        Expert Support
+                    </strong>
+
+                    <small>
+                        We're Here to Help
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= COMPUTER ILLUSTRATION ================= -->
+
+    <div class="hero-visual">
+
+        <div class="monitor">
+
+            <div class="monitor-screen">
+
+                <div class="screen-header">
+
+                    <div class="screen-logo">
+                        RKB
+                    </div>
+
+                    RKB ONLINE
+
+                </div>
+
+
+                <div class="screen-cards">
+
+                    <div class="screen-card">
+
+                        <span class="screen-icon">
+                            🪪
+                        </span>
+
+                        PAN Card
+
+                    </div>
+
+
+                    <div class="screen-card">
+
+                        <span class="screen-icon">
+                            🆔
+                        </span>
+
+                        Aadhaar
+
+                    </div>
+
+
+                    <div class="screen-card">
+
+                        <span class="screen-icon">
+                            🗳
+                        </span>
+
+                        Voter ID
+
+                    </div>
+
+
+                    <div class="screen-card">
+
+                        <span class="screen-icon">
+                            🛂
+                        </span>
+
+                        Passport
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="monitor-stand"></div>
+
+        <div class="monitor-base"></div>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Our CSC Services
+    </h2>
+
+    <p>
+        Select the service you need
+    </p>
+
+</div>
+
+
+
+<!-- ================= SERVICE GRID ================= -->
+
+<div class="service-grid">
+
+
+    <!-- 01 PAN -->
+
+    <a
+        href="pan.html"
+        class="service">
+
+        <span class="number">
+            01
+        </span>
+
+        <div class="service-icon">
+            🪪
+        </div>
+
+        <h3>
+            PAN Card Services
+        </h3>
+
+        <p>
+            PAN card application,
+            correction and related assistance.
+        </p>
+
+        <span class="apply-btn">
+            View Service →
+        </span>
+
+    </a>
+
+
+
+    <!-- 02 AADHAAR -->
+
+    <a
+        href="aadhar.html"
+        class="service">
+
+        <span class="number">
+            02
+        </span>
+
+        <div class="service-icon">
+            🆔
+        </div>
+
+        <h3>
+            Aadhaar Services
+        </h3>
+
+        <p>
+            Aadhaar enrolment, update,
+            download and assistance.
+        </p>
+
+        <span class="apply-btn">
+            View Service →
+        </span>
+
+    </a>
+
+
+
+    <!-- 03 VOTER -->
+
+    <a
+        href="voter.html"
+        class="service">
+
+        <span class="number">
+            03
+        </span>
+
+        <div class="service-icon">
+            🗳️
+        </div>
+
+        <h3>
+            Voter ID Services
+        </h3>
+
+        <p>
+            Voter registration, correction
+            and related online assistance.
+        </p>
+
+        <span class="apply-btn">
+            View Service →
+        </span>
+
+    </a>
+
+
+
+    <!-- 04 PASSPORT -->
+
+    <a
+        href="passport.html"
+        class="service">
+
+        <span class="number">
+            04
+        </span>
+
+        <div class="service-icon">
+            🛂
+        </div>
+
+        <h3>
+            Passport Services
+        </h3>
+
+        <p>
+            Passport application and
+            online assistance.
+        </p>
+
+        <span class="apply-btn">
+            View Service →
+        </span>
+
+    </a>
+
+
+
+    <!-- 05 DL -->
+
+    <a
+        href="driving-license.html"
+        class="service">
+
+        <span class="number">
+            05
+        </span>
+
+        <div class="service-icon">
+            🚗
+        </div>
+
+        <h3>
+            Driving Licence
+        </h3>
+
+        <p>
+            Driving licence related
+            online services and assistance.
+        </p>
+
+        <span class="apply-btn">
+            View Service →
+        </span>
+
+    </a>
+
+
+
+    <!-- 06 OTHER -->
+
+    <a
+        href="other-csc.html"
+        class="service">
+
+        <span class="number">
+            06
+        </span>
+
+        <div class="service-icon">
+            📄
+        </div>
+
+        <h3>
+            Other CSC Services
+        </h3>
+
+        <p>
+            Explore other digital and
+            online CSC related services.
+        </p>
+
+        <span class="apply-btn">
+            View Service →
+        </span>
+
+    </a>
+
+
+</div>
+
+
+
+<!-- ================= INFO ================= -->
+
+<div class="info-grid">
+
+
+    <div class="info-box">
+
+        <h2>
+            💻 About RKB ONLINE
+        </h2>
+
+        <p>
+
+            Welcome to RKB ONLINE, your local CSC Centre
+            for digital and online service assistance.
+
+            We help customers access various online
+            services conveniently through our centre.
+
+        </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <h2>
+            📋 How Our Service Works
+        </h2>
+
+        <p>
+
+            Select the service you need, open the related
+            service page and check the available information.
+            You can then contact RKB ONLINE through WhatsApp
+            or phone for further assistance.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ================= FEATURES ================= -->
+
+<div class="features">
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            🛡
+        </div>
+
+        <h3>
+            Trusted Process
+        </h3>
+
+        <p>
+            Reliable service assistance
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            ⚡
+        </div>
+
+        <h3>
+            Quick Assistance
+        </h3>
+
+        <p>
+            Convenient online support
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            ♟
+        </div>
+
+        <h3>
+            Expert Support
+        </h3>
+
+        <p>
+            Helpful customer guidance
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            📱
+        </div>
+
+        <h3>
+            Easy Contact
+        </h3>
+
+        <p>
+            Call or WhatsApp anytime
+        </p>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<section class="assistance">
+
+
+    <div>
+
+        <h2>
+            Need CSC Assistance?
+        </h2>
+
+        <p>
+
+            Send us a WhatsApp message and tell us
+            which CSC service you need.
+
+        </p>
+
+    </div>
+
+
+    <a
+        class="wa-btn"
+        href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE%2C%20I%20need%20CSC%20Service"
+        target="_blank">
+
+        💬 Chat on WhatsApp
+
+    </a>
+
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section
+    class="contact"
+    id="contact">
+
+
+    <div>
+
+        <h2>
+            Contact RKB ONLINE
+        </h2>
+
+        <p>
+            📍 AT/PO-TUSAR, 759126
+        </p>
+
+        <p>
+            📞 +91 8908880386
+        </p>
+
+    </div>
+
+
+    <div class="contact-buttons">
+
+
+        <a
+            class="call"
+            href="tel:+918908880386">
+
+            📞 Call Now
+
         </a>
 
 
-        <!-- AADHAAR -->
-        <a href="aadhar.html" class="service">
-  <span>🆔 Aadhaar Services</span>
-  <span>›</span>
+        <a
+            class="whatsapp"
+            href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE"
+            target="_blank">
+
+            💬 WhatsApp
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ================= BACK ================= -->
+
+<a
+    href="index.html"
+    class="back">
+
+    ← Back to RKB WORK
+
 </a>
 
 
-        <!-- VOTER ID -->
-        <a href="#" class="service">
-          <span>🗳️ Voter ID Services</span>
-          <span>›</span>
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-nav">
+
+        <a href="index.html">
+            Home
         </a>
 
+        |
 
-        <!-- PASSPORT -->
-        <a href="#" class="service">
-          <span>🛂 Passport Services</span>
-          <span>›</span>
+        <a href="csc.html">
+            CSC Services
         </a>
 
+        |
 
-        <!-- DRIVING LICENCE -->
-        <a href="#" class="service">
-          <span>🚗 Driving Licence</span>
-          <span>›</span>
+        <a href="aadhar.html">
+            Aadhaar Services
         </a>
 
+        |
 
-        <!-- OTHER CSC -->
-        <a href="#" class="service">
-          <span>📄 Other CSC Services</span>
-          <span>›</span>
+        <a href="about.html">
+            About Us
         </a>
 
-      </div>
+        |
 
-    </section>
-
-
-    <section class="contact" id="contact">
-
-      <h2>📞 Contact RKB ONLINE</h2>
-
-      <p>
-        📍 AT/PO-TUSAR, 759126
-      </p>
-
-      <p>
-        📱 +91 8908880386
-      </p>
-
-      <div class="buttons">
-
-        <a
-          class="button call"
-          href="tel:+918908880386">
-          📞 Call Now
+        <a href="#contact">
+            Contact
         </a>
 
-        <a
-          class="button whatsapp"
-          href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE"
-          target="_blank">
-          💬 WhatsApp
-        </a>
-
-      </div>
-
-    </section>
+    </div>
 
 
-    <a href="index.html" class="back">
-      ← Back to RKB WORK
-    </a>
+    <p>
+        © 2026 RKB WORK • RKB ONLINE.
+        All Rights Reserved.
+    </p>
 
-  </main>
+</footer>
 
 
-  <footer>
-    © 2026 RKB WORK • RKB ONLINE
-  </footer>
+
+<!-- ================= TOP ================= -->
+
+<a
+    href="#top"
+    class="top">
+
+    ↑
+
+</a>
+
 
 </body>
 </html>
