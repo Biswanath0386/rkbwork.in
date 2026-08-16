@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>RKB WORK</title>
+  <title>RKB WORK | CSC • Electrical • Transport</title>
 
   <style>
     * {
@@ -20,45 +20,55 @@
     }
 
     body {
-      background: #f5f7fa;
+      background: #f1f5f9;
       color: #111827;
     }
 
     /* HEADER */
     header {
-      background: #0f172a;
+      background: linear-gradient(135deg, #020617, #172554);
       color: white;
       text-align: center;
-      padding: 45px 20px;
+      padding: 55px 20px 50px;
     }
 
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+    header .logo {
+      font-size: 46px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    header .tagline {
+      font-size: 16px;
+      color: #cbd5e1;
       letter-spacing: 1px;
     }
 
-    header p {
-      color: #cbd5e1;
-      font-size: 16px;
+    .header-line {
+      width: 70px;
+      height: 4px;
+      background: #38bdf8;
+      margin: 22px auto 0;
+      border-radius: 10px;
     }
 
-    /* NAVIGATION */
+    /* NAV */
     nav {
       background: white;
-      padding: 16px 10px;
+      padding: 17px 10px;
       text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
     nav a {
-      color: #111827;
       text-decoration: none;
-      font-weight: bold;
-      margin: 0 15px;
+      color: #0f172a;
+      font-weight: 700;
+      margin: 0 18px;
       font-size: 15px;
     }
 
@@ -68,41 +78,62 @@
 
     /* HERO */
     .hero {
+      max-width: 1000px;
+      margin: 35px auto 0;
+      padding: 55px 25px;
       text-align: center;
-      padding: 65px 20px 45px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 10px 35px rgba(15,23,42,0.08);
+    }
+
+    .hero-icon {
+      font-size: 65px;
+      margin-bottom: 18px;
     }
 
     .hero h2 {
-      font-size: 32px;
+      font-size: 34px;
       margin-bottom: 15px;
     }
 
     .hero p {
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
       color: #64748b;
-      line-height: 1.7;
-      font-size: 16px;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 28px;
+      background: #0f172a;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
     }
 
     /* BUSINESS */
     .business {
       max-width: 1150px;
       margin: auto;
-      padding: 20px 20px 70px;
+      padding: 65px 20px;
     }
 
-    .business-title {
+    .section-title {
       text-align: center;
-      margin-bottom: 35px;
+      margin-bottom: 38px;
     }
 
-    .business-title h2 {
-      font-size: 30px;
+    .section-title h2 {
+      font-size: 32px;
       margin-bottom: 10px;
     }
 
-    .business-title p {
+    .section-title p {
       color: #64748b;
     }
 
@@ -114,78 +145,115 @@
     }
 
     .card {
+      position: relative;
+      overflow: hidden;
       background: white;
-      border-radius: 18px;
-      padding: 35px 25px;
+      border-radius: 22px;
+      padding: 38px 25px 32px;
       text-align: center;
       text-decoration: none;
       color: #111827;
-      box-shadow: 0 5px 20px rgba(15,23,42,0.08);
-      transition: transform 0.25s ease,
-                  box-shadow 0.25s ease;
-      border: 1px solid #eef2f7;
+      box-shadow: 0 8px 25px rgba(15,23,42,0.09);
+      border: 1px solid #e2e8f0;
+      transition: 0.3s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 5px;
+      background: #2563eb;
     }
 
     .card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 12px 28px rgba(15,23,42,0.14);
+      transform: translateY(-10px);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.16);
     }
 
-    .icon {
-      font-size: 58px;
-      margin-bottom: 18px;
+    .icon-box {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #eff6ff;
+      font-size: 48px;
     }
 
     .card h3 {
-      font-size: 23px;
-      margin-bottom: 12px;
+      font-size: 25px;
+      margin-bottom: 13px;
     }
 
     .card p {
       color: #64748b;
-      line-height: 1.6;
-      min-height: 50px;
+      line-height: 1.7;
+      min-height: 55px;
     }
 
     .view {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 22px;
+      padding: 11px 20px;
+      border-radius: 8px;
+      background: #0f172a;
+      color: white;
       font-weight: bold;
-      color: #2563eb;
+      font-size: 14px;
     }
 
     /* CONTACT */
     .contact {
-      background: #0f172a;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 45px 20px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #020617, #172554);
       color: white;
       text-align: center;
-      padding: 50px 20px;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.15);
     }
 
     .contact h2 {
-      font-size: 27px;
+      font-size: 29px;
       margin-bottom: 20px;
     }
 
     .contact p {
       color: #cbd5e1;
-      margin: 10px;
+      margin: 9px;
       font-size: 16px;
     }
 
-    .contact a {
+    .contact-buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-buttons a {
       display: inline-block;
-      margin-top: 20px;
-      background: #2563eb;
-      color: white;
       text-decoration: none;
-      padding: 13px 25px;
-      border-radius: 8px;
+      padding: 14px 25px;
+      border-radius: 10px;
       font-weight: bold;
     }
 
-    .contact a:hover {
-      background: #1d4ed8;
+    .call {
+      background: white;
+      color: #0f172a;
+    }
+
+    .whatsapp {
+      background: #22c55e;
+      color: white;
     }
 
     /* FOOTER */
@@ -193,7 +261,7 @@
       background: #020617;
       color: #94a3b8;
       text-align: center;
-      padding: 20px;
+      padding: 22px;
       font-size: 14px;
     }
 
@@ -201,18 +269,32 @@
     @media (max-width: 800px) {
 
       header {
-        padding: 38px 15px;
+        padding: 42px 15px;
       }
 
-      header h1 {
-        font-size: 34px;
+      header .logo {
+        font-size: 38px;
+      }
+
+      nav a {
+        margin: 0 9px;
       }
 
       .hero {
-        padding: 50px 20px 35px;
+        margin: 20px 15px 0;
+        padding: 42px 20px;
+        border-radius: 20px;
       }
 
       .hero h2 {
+        font-size: 28px;
+      }
+
+      .business {
+        padding: 50px 15px;
+      }
+
+      .section-title h2 {
         font-size: 28px;
       }
 
@@ -222,11 +304,12 @@
       }
 
       .card {
-        padding: 30px 22px;
+        padding: 32px 22px;
       }
 
-      nav a {
-        margin: 0 9px;
+      .contact {
+        margin: 0 15px 45px;
+        border-radius: 20px;
       }
     }
   </style>
@@ -236,8 +319,11 @@
 
   <!-- HEADER -->
   <header>
-    <h1>RKB WORK</h1>
-    <p>CSC • Electrical Shop • Transport</p>
+    <div class="logo">RKB WORK</div>
+    <div class="tagline">
+      CSC • Electrical Shop • Transport
+    </div>
+    <div class="header-line"></div>
   </header>
 
 
@@ -251,21 +337,30 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
+
+    <div class="hero-icon">🏢</div>
+
     <h2>Welcome to RKB WORK</h2>
 
     <p>
-      Your trusted platform for CSC services,
-      electrical products and transport services.
+      Your trusted local platform for
+      CSC digital services, electrical products
+      and transport-related services.
     </p>
+
+    <a href="#business" class="hero-button">
+      Explore Our Services →
+    </a>
+
   </section>
 
 
   <!-- BUSINESS -->
   <section class="business" id="business">
 
-    <div class="business-title">
+    <div class="section-title">
       <h2>Our Businesses</h2>
-      <p>Select a service to continue</p>
+      <p>Choose a service to continue</p>
     </div>
 
 
@@ -274,17 +369,20 @@
       <!-- RKB ONLINE -->
       <a href="csc.html" class="card">
 
-        <div class="icon">💻</div>
+        <div class="icon-box">
+          💻
+        </div>
 
         <h3>RKB ONLINE</h3>
 
         <p>
-          CSC Centre and digital
-          online services.
+          CSC Centre, PAN, Aadhaar,
+          Voter ID, Passport and
+          other digital online services.
         </p>
 
         <span class="view">
-          Tap to View →
+          Open CSC Services →
         </span>
 
       </a>
@@ -293,17 +391,20 @@
       <!-- RKB ELECTRICAL -->
       <a href="electrical.html" class="card">
 
-        <div class="icon">⚡</div>
+        <div class="icon-box">
+          ⚡
+        </div>
 
         <h3>RKB ELECTRICAL</h3>
 
         <p>
-          Electrical products and
+          Electrical products,
+          electrical items and
           related services.
         </p>
 
         <span class="view">
-          Tap to View →
+          Open Electrical →
         </span>
 
       </a>
@@ -312,17 +413,20 @@
       <!-- RKB TRANSPORT -->
       <a href="transport.html" class="card">
 
-        <div class="icon">🚚</div>
+        <div class="icon-box">
+          🚚
+        </div>
 
         <h3>RKB TRANSPORT</h3>
 
         <p>
-          Transport and vehicle-related
+          Transport and
+          vehicle-related
           services.
         </p>
 
         <span class="view">
-          Tap to View →
+          Open Transport →
         </span>
 
       </a>
@@ -335,15 +439,27 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
 
-    <h2>Contact RKB WORK</h2>
+    <h2>📞 Contact RKB WORK</h2>
 
     <p>📍 AT/PO-TUSAR, 759126</p>
 
-    <p>📞 +91 8908880386</p>
+    <p>📱 +91 8908880386</p>
 
-    <a href="tel:+918908880386">
-      📞 Call Now
-    </a>
+    <div class="contact-buttons">
+
+      <a
+        class="call"
+        href="tel:+918908880386">
+        📞 Call Now
+      </a>
+
+      <a
+        class="whatsapp"
+        href="https://wa.me/918908880386?text=Hello%20RKB%20WORK">
+        💬 WhatsApp
+      </a>
+
+    </div>
 
   </section>
 
