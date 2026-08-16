@@ -3,78 +3,205 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RKB ONLINE | RKB WORK</title>
+
+  <title>RKB ONLINE | CSC Centre</title>
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
     }
 
     body {
-      margin: 0;
       background: #f5f7fa;
       color: #222;
-      text-align: center;
     }
 
     header {
       background: #111827;
       color: white;
-      padding: 40px 20px;
+      text-align: center;
+      padding: 35px 20px;
     }
 
     header h1 {
-      margin: 0 0 10px;
       font-size: 36px;
+      margin-bottom: 8px;
     }
 
-    .content {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 30px 20px;
+    header p {
+      color: #d1d5db;
+      font-size: 16px;
+    }
+
+    nav {
       background: white;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: bold;
+      margin: 0 12px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 35px 18px 50px;
+    }
+
+    .intro {
+      background: white;
+      text-align: center;
+      padding: 35px 20px;
       border-radius: 16px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
     }
 
-    .icon {
-      font-size: 60px;
+    .intro .icon {
+      font-size: 55px;
+      margin-bottom: 15px;
     }
 
-    h2 {
-      margin-top: 15px;
+    .intro h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
     }
 
-    p {
-      line-height: 1.7;
-      color: #555;
+    .intro p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .services-title {
+      text-align: center;
+      margin: 30px 0 20px;
+    }
+
+    .services-title h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .services-title p {
+      color: #666;
+    }
+
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .service {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      color: #111827;
+      text-decoration: none;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      font-size: 19px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .service:hover {
+      transform: translateY(-2px);
+    }
+
+    .service span {
+      font-size: 28px;
+      color: #777;
+    }
+
+    .contact {
+      background: #111827;
+      color: white;
+      text-align: center;
+      margin-top: 40px;
+      padding: 35px 20px;
+      border-radius: 16px;
+    }
+
+    .contact h2 {
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: #d1d5db;
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .button {
       display: inline-block;
-      margin: 8px;
-      padding: 13px 22px;
-      background: #111827;
-      color: white;
       text-decoration: none;
+      padding: 13px 22px;
       border-radius: 8px;
       font-weight: bold;
     }
 
+    .call {
+      background: white;
+      color: #111827;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
     .back {
       display: block;
-      margin-top: 25px;
+      text-align: center;
+      margin-top: 30px;
       color: #111827;
       text-decoration: none;
       font-weight: bold;
     }
 
     footer {
-      margin-top: 40px;
       background: #0b1120;
-      color: #aaa;
+      color: #9ca3af;
+      text-align: center;
       padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      .intro h2 {
+        font-size: 26px;
+      }
+
+      .service {
+        font-size: 17px;
+        padding: 18px;
+      }
     }
   </style>
 </head>
@@ -83,44 +210,126 @@
 
   <header>
     <h1>RKB ONLINE</h1>
-    <p>CSC Centre</p>
+    <p>CSC Centre • Digital & Online Services</p>
   </header>
 
-  <div class="content">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="csc.html">CSC</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <div class="icon">💻</div>
+  <main class="container">
 
-    <h2>RKB ONLINE</h2>
+    <section class="intro">
+      <div class="icon">💻</div>
 
-    <p>
-      Welcome to RKB ONLINE, your local CSC Centre
-      for digital and online services.
-    </p>
+      <h2>RKB ONLINE</h2>
 
-    <p>
-      📍 <strong>AT/PO-TUSAR, 759126</strong>
-    </p>
+      <p>
+        Welcome to RKB ONLINE, your local CSC Centre
+        for digital and online services.
+      </p>
+    </section>
 
-    <p>
-      📞 <strong>+91 8908880386</strong>
-    </p>
 
-    <a href="tel:+918908880386" class="button">
-      📞 Call Now
-    </a>
+    <section>
 
-    <a href="https://wa.me/918908880386" class="button">
-      💬 WhatsApp
-    </a>
+      <div class="services-title">
+        <h2>📋 CSC Services</h2>
+        <p>Select a service to see related information.</p>
+      </div>
+
+
+      <div class="service-list">
+
+        <!-- PAN CARD -->
+        <a href="pan.html" class="service">
+          <span>🪪 PAN Card</span>
+          <span>›</span>
+        </a>
+
+
+        <!-- AADHAAR -->
+        <a href="#" class="service">
+          <span>🆔 Aadhaar Services</span>
+          <span>›</span>
+        </a>
+
+
+        <!-- VOTER ID -->
+        <a href="#" class="service">
+          <span>🗳️ Voter ID Services</span>
+          <span>›</span>
+        </a>
+
+
+        <!-- PASSPORT -->
+        <a href="#" class="service">
+          <span>🛂 Passport Services</span>
+          <span>›</span>
+        </a>
+
+
+        <!-- DRIVING LICENCE -->
+        <a href="#" class="service">
+          <span>🚗 Driving Licence</span>
+          <span>›</span>
+        </a>
+
+
+        <!-- OTHER CSC -->
+        <a href="#" class="service">
+          <span>📄 Other CSC Services</span>
+          <span>›</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="contact" id="contact">
+
+      <h2>📞 Contact RKB ONLINE</h2>
+
+      <p>
+        📍 AT/PO-TUSAR, 759126
+      </p>
+
+      <p>
+        📱 +91 8908880386
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="button call"
+          href="tel:+918908880386">
+          📞 Call Now
+        </a>
+
+        <a
+          class="button whatsapp"
+          href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE"
+          target="_blank">
+          💬 WhatsApp
+        </a>
+
+      </div>
+
+    </section>
+
 
     <a href="index.html" class="back">
       ← Back to RKB WORK
     </a>
 
-  </div>
+  </main>
+
 
   <footer>
-    © 2026 RKB WORK
+    © 2026 RKB WORK • RKB ONLINE
   </footer>
 
 </body>
