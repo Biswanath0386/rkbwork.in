@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RKB WORK</title>
+
+  <title>RKB WORK | CSC, Electrical & Transport</title>
 
   <style>
     * {
@@ -11,6 +12,10 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -22,12 +27,13 @@
       background: #111827;
       color: white;
       text-align: center;
-      padding: 35px 20px;
+      padding: 45px 20px;
     }
 
     header h1 {
-      font-size: 38px;
-      margin-bottom: 8px;
+      font-size: 42px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
     }
 
     header p {
@@ -37,11 +43,12 @@
 
     nav {
       background: white;
-      padding: 15px;
+      padding: 16px 10px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
+      z-index: 100;
     }
 
     nav a {
@@ -51,73 +58,113 @@
       margin: 0 12px;
     }
 
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     .hero {
       text-align: center;
-      padding: 55px 20px;
+      padding: 65px 20px 50px;
     }
 
     .hero h2 {
-      font-size: 30px;
+      font-size: 34px;
       margin-bottom: 15px;
     }
 
     .hero p {
-      max-width: 650px;
+      max-width: 700px;
       margin: auto;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #555;
+      font-size: 17px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 25px;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
     }
 
     .services {
       max-width: 1100px;
       margin: auto;
-      padding: 20px;
+      padding: 25px 20px 60px;
     }
 
     .services h2 {
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 28px;
+      margin-bottom: 35px;
+      font-size: 30px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
     .card {
       background: white;
-      padding: 30px 20px;
-      border-radius: 15px;
+      padding: 32px 22px;
+      border-radius: 16px;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .card .icon {
-      font-size: 45px;
-      margin-bottom: 15px;
+      font-size: 50px;
+      margin-bottom: 18px;
     }
 
     .card h3 {
-      font-size: 22px;
+      font-size: 23px;
       margin-bottom: 12px;
     }
 
     .card p {
       color: #666;
-      line-height: 1.5;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .card .location {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .card-button {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 4px;
     }
 
     .contact {
       text-align: center;
       background: #111827;
       color: white;
-      margin-top: 50px;
-      padding: 45px 20px;
+      padding: 50px 20px;
     }
 
     .contact h2 {
+      font-size: 28px;
       margin-bottom: 15px;
     }
 
@@ -126,78 +173,214 @@
       color: #d1d5db;
     }
 
+    .contact-buttons {
+      margin-top: 22px;
+    }
+
+    .contact-buttons a {
+      display: inline-block;
+      margin: 5px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      background: white;
+      color: #111827;
+    }
+
     footer {
       text-align: center;
       background: #0b1120;
       color: #9ca3af;
-      padding: 18px;
+      padding: 20px;
       font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 36px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <h1>RKB WORK</h1>
     <p>CSC • Electrical Shop • Transport</p>
   </header>
 
+
+  <!-- NAVIGATION -->
   <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </nav>
 
+
+  <!-- HOME -->
   <section class="hero" id="home">
+
     <h2>Welcome to RKB WORK</h2>
+
     <p>
-      RKB WORK is your platform for CSC services,
+      Your trusted platform for CSC services,
       electrical products and transport services.
     </p>
+
+    <a href="#services" class="hero-button">
+      Explore Services
+    </a>
+
   </section>
 
+
+  <!-- SERVICES -->
   <section class="services" id="services">
-    <h2>Our Services</h2>
+
+    <h2>Our Businesses</h2>
 
     <div class="cards">
 
+
+      <!-- CSC -->
       <div class="card">
+
         <div class="icon">💻</div>
-        <h3>CSC Services</h3>
+
+        <h3>RKB ONLINE</h3>
+
         <p>
-          Digital and online services available through
-          our CSC service center.
+          CSC Centre providing digital and online
+          services for your everyday needs.
         </p>
+
+        <div class="location">
+          📍 AT/PO-TUSAR, 759126
+        </div>
+
+        <a
+          href="tel:+918908880386"
+          class="card-button">
+          📞 Call
+        </a>
+
+        <a
+          href="https://wa.me/918908880386"
+          class="card-button">
+          💬 WhatsApp
+        </a>
+
       </div>
 
+
+      <!-- ELECTRICAL -->
       <div class="card">
+
         <div class="icon">⚡</div>
-        <h3>Electrical Shop</h3>
+
+        <h3>RKB ELECTRICAL</h3>
+
         <p>
-          Electrical products, accessories and related
-          services for your needs.
+          Electrical products, accessories and
+          related electrical services.
         </p>
+
+        <div class="location">
+          📍 AT/PO-TUSAR, 759126
+        </div>
+
+        <a
+          href="tel:+917683973997"
+          class="card-button">
+          📞 Call
+        </a>
+
+        <a
+          href="https://wa.me/917683973997"
+          class="card-button">
+          💬 WhatsApp
+        </a>
+
       </div>
 
+
+      <!-- TRANSPORT -->
       <div class="card">
+
         <div class="icon">🚚</div>
-        <h3>Transport</h3>
+
+        <h3>RKB TRANSPORT</h3>
+
         <p>
-          Transport and vehicle-related services
-          available through RKB WORK.
+          Reliable transport and vehicle-related
+          services.
         </p>
+
+        <div class="location">
+          📍 AT/PO-TUSAR, 759126
+        </div>
+
+        <a
+          href="tel:+917683973997"
+          class="card-button">
+          📞 Call
+        </a>
+
+        <a
+          href="https://wa.me/917683973997"
+          class="card-button">
+          💬 WhatsApp
+        </a>
+
       </div>
 
     </div>
+
   </section>
 
+
+  <!-- CONTACT -->
   <section class="contact" id="contact">
+
     <h2>Contact RKB WORK</h2>
-    <p>For more information, please contact us.</p>
-    <p>RKB WORK • rkbwork.in</p>
+
+    <p>📍 AT/PO-TUSAR, 759126</p>
+
+    <p>For more information, contact us.</p>
+
+    <div class="contact-buttons">
+
+      <a href="tel:+918908880386">
+        📞 RKB ONLINE
+      </a>
+
+      <a href="tel:+917683973997">
+        📞 RKB ELECTRICAL / TRANSPORT
+      </a>
+
+    </div>
+
   </section>
 
+
+  <!-- FOOTER -->
   <footer>
     © 2026 RKB WORK. All Rights Reserved.
   </footer>
