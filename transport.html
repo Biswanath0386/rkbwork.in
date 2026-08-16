@@ -9,120 +9,877 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
-      background: #f5f7fa;
-      color: #222;
+      background: #f4f7fb;
+      color: #111827;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      background:
+        linear-gradient(135deg, #071a3d, #0b3b82);
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: white;
+      color: #0b3b82;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      border: 3px solid #f59e0b;
+    }
+
+    .brand h1 {
+      font-size: 25px;
+      margin-bottom: 3px;
+    }
+
+    .brand p {
+      color: #dbeafe;
+      font-size: 12px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #fbbf24;
+    }
+
+    .header-whatsapp {
+      background: #16a34a;
+      padding: 11px 18px;
+      border-radius: 8px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      background:
+        radial-gradient(circle at right, rgba(37,99,235,0.35), transparent 35%),
+        linear-gradient(135deg, #061636, #0b3b82);
+      color: white;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      padding: 55px 7%;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      width: 55%;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #f59e0b;
+      color: #111827;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 span {
+      color: #fbbf24;
+    }
+
+    .hero-text {
+      font-size: 18px;
+      color: #dbeafe;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .call-btn {
+      background: white;
+      color: #0b3b82;
+    }
+
+    .call-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .whatsapp-btn {
+      background: #16a34a;
+      color: white;
+    }
+
+    .whatsapp-btn:hover {
+      background: #15803d;
+      transform: translateY(-3px);
+    }
+
+    .hero-truck {
+      width: 45%;
       text-align: center;
     }
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 40px 20px;
+    .truck-icon {
+      font-size: 155px;
+      filter: drop-shadow(0 15px 15px rgba(0,0,0,0.25));
+      animation: truckMove 3s ease-in-out infinite;
     }
 
-    header h1 {
-      margin: 0 0 10px;
-      font-size: 36px;
+    @keyframes truckMove {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
     }
 
-    .content {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 30px 20px;
+    /* ================= MAIN ================= */
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      color: #0b2d63;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #64748b;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      padding: 30px 22px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(15,23,42,0.08);
+      border: 1px solid #e5e7eb;
+      transition: 0.3s;
     }
 
-    .icon {
-      font-size: 60px;
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 28px rgba(15,23,42,0.13);
     }
 
-    h2 {
-      margin-top: 15px;
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      margin: auto;
+      border-radius: 50%;
+      background: #eaf2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      margin-bottom: 18px;
     }
 
-    p {
-      line-height: 1.7;
-      color: #555;
+    .service-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+      color: #111827;
     }
 
-    .button {
-      display: inline-block;
-      margin: 8px;
-      padding: 13px 22px;
-      background: #111827;
+    .service-card p {
+      color: #64748b;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* ================= WHY US ================= */
+
+    .why-section {
+      background: #eef5ff;
+      padding: 55px 20px;
+    }
+
+    .why-grid {
+      max-width: 1050px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      background: white;
+      padding: 25px 15px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .why-card .icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .why-card h3 {
+      font-size: 16px;
+      color: #0b2d63;
+      margin-bottom: 7px;
+    }
+
+    .why-card p {
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-section {
+      max-width: 1100px;
+      margin: 45px auto;
+      padding: 45px 25px;
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, #071a3d, #0b3b82);
       color: white;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.18);
+    }
+
+    .contact-section h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .contact-section > p {
+      color: #dbeafe;
+      margin-bottom: 8px;
+    }
+
+    .contact-info {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      font-size: 16px;
+    }
+
+    .contact-buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      display: inline-block;
       text-decoration: none;
+      padding: 14px 28px;
       border-radius: 8px;
       font-weight: bold;
     }
 
-    .back {
-      display: block;
-      margin-top: 25px;
-      color: #111827;
-      text-decoration: none;
-      font-weight: bold;
+    .contact-call {
+      background: white;
+      color: #0b3b82;
     }
 
+    .contact-whatsapp {
+      background: #16a34a;
+      color: white;
+    }
+
+    /* ================= BACK ================= */
+
+    .back-section {
+      text-align: center;
+      padding: 10px 20px 45px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #0b3b82;
+      font-weight: bold;
+      border: 1px solid #cbd5e1;
+      background: white;
+      padding: 12px 22px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #0b3b82;
+      color: white;
+    }
+
+    /* ================= FOOTER ================= */
+
     footer {
-      margin-top: 40px;
-      background: #0b1120;
-      color: #aaa;
-      padding: 20px;
+      background: #061229;
+      color: #94a3b8;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 900px) {
+
+      header {
+        padding: 15px 20px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a:not(.header-whatsapp) {
+        display: none;
+      }
+
+      .hero {
+        padding: 45px 25px;
+      }
+
+      .hero-content {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-truck {
+        display: none;
+      }
+
+      .hero h2 {
+        font-size: 42px;
+      }
+
+      .hero-text {
+        margin: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .brand p {
+        font-size: 10px;
+      }
+
+      .logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .header-whatsapp {
+        padding: 9px 12px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 45px 20px;
+      }
+
+      .hero h2 {
+        font-size: 36px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+      }
+
+      .contact-section {
+        margin: 25px 15px;
+        padding: 35px 18px;
+      }
+
+      .contact-info {
+        gap: 15px;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- ================= HEADER ================= -->
+
   <header>
-    <h1>RKB TRANSPORT</h1>
-    <p>Transport Services</p>
+
+    <div class="logo-area">
+
+      <div class="logo">
+        RKB
+      </div>
+
+      <div class="brand">
+        <h1>RKB TRANSPORT</h1>
+        <p>Reliable Transport Services</p>
+      </div>
+
+    </div>
+
+    <nav>
+
+      <a href="index.html">Home</a>
+
+      <a href="transport.html">Transport</a>
+
+      <a href="#services">Services</a>
+
+      <a href="#contact">Contact</a>
+
+      <a
+        href="https://wa.me/917683973997?text=Hello%20RKB%20TRANSPORT%2C%20I%20need%20transport%20service."
+        target="_blank"
+        class="header-whatsapp">
+        💬 WhatsApp Us
+      </a>
+
+    </nav>
+
   </header>
 
-  <div class="content">
 
-    <div class="icon">🚚</div>
+  <!-- ================= HERO ================= -->
 
-    <h2>RKB TRANSPORT</h2>
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <span class="badge">
+        🚚 TRANSPORT SERVICES
+      </span>
+
+      <h2>
+        Reliable <span>Transport</span><br>
+        For Your Needs
+      </h2>
+
+      <p class="hero-text">
+        RKB TRANSPORT provides reliable and convenient
+        transport and vehicle-related services for your
+        local and transportation needs.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          href="tel:+917683973997"
+          class="hero-btn call-btn">
+          📞 Call Now
+        </a>
+
+        <a
+          href="https://wa.me/917683973997?text=Hello%20RKB%20TRANSPORT%2C%20I%20need%20transport%20service."
+          target="_blank"
+          class="hero-btn whatsapp-btn">
+          💬 WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-truck">
+
+      <div class="truck-icon">
+        🚚
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SERVICES ================= -->
+
+  <main class="container" id="services">
+
+    <div class="section-title">
+
+      <h2>Our Transport Services</h2>
+
+      <p>
+        Choose the service you need and contact us.
+      </p>
+
+    </div>
+
+
+    <div class="services">
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          🚚
+        </div>
+
+        <h3>Transport Service</h3>
+
+        <p>
+          Reliable transport solutions for
+          different transportation requirements.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          🚛
+        </div>
+
+        <h3>Vehicle Service</h3>
+
+        <p>
+          Assistance related to vehicles and
+          transport requirements.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          📦
+        </div>
+
+        <h3>Goods Transportation</h3>
+
+        <p>
+          Transport assistance for goods and
+          other transportation needs.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          🛣️
+        </div>
+
+        <h3>Local Transport</h3>
+
+        <p>
+          Convenient local transportation
+          assistance according to requirement.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          📋
+        </div>
+
+        <h3>Transport Assistance</h3>
+
+        <p>
+          Get information and assistance
+          regarding transport-related services.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          📞
+        </div>
+
+        <h3>Quick Enquiry</h3>
+
+        <p>
+          Contact RKB TRANSPORT directly for
+          your transport-related enquiry.
+        </p>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ================= WHY CHOOSE US ================= -->
+
+  <section class="why-section">
+
+    <div class="section-title">
+
+      <h2>Why Choose RKB TRANSPORT?</h2>
+
+      <p>
+        Simple, reliable and customer-focused service.
+      </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+
+      <div class="why-card">
+
+        <div class="icon">
+          ⭐
+        </div>
+
+        <h3>Reliable Service</h3>
+
+        <p>
+          Reliable assistance for your transport needs.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="icon">
+          ⚡
+        </div>
+
+        <h3>Quick Response</h3>
+
+        <p>
+          Contact us easily for quick enquiry.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="icon">
+          🤝
+        </div>
+
+        <h3>Customer Support</h3>
+
+        <p>
+          Customer-focused transport assistance.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="icon">
+          📱
+        </div>
+
+        <h3>Easy Contact</h3>
+
+        <p>
+          Call or WhatsApp us directly.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section class="contact-section" id="contact">
+
+    <h2>
+      📞 Contact RKB TRANSPORT
+    </h2>
 
     <p>
-      Transport and vehicle-related services
-      for your needs.
+      Get in touch with us for transport-related requirements.
     </p>
 
-    <p>
-      📍 <strong>AT/PO-TUSAR, 759126</strong>
-    </p>
 
-    <p>
-      📞 <strong>+91 7683973997</strong>
-    </p>
+    <div class="contact-info">
 
-    <a href="tel:+917683973997" class="button">
-      📞 Call Now
-    </a>
+      <div class="contact-item">
+        📍 <strong>AT/PO-TUSAR, 759126</strong>
+      </div>
 
-    <a href="https://wa.me/917683973997" class="button">
-      💬 WhatsApp
-    </a>
+      <div class="contact-item">
+        📞 <strong>+91 7683973997</strong>
+      </div>
 
-    <a href="index.html" class="back">
+    </div>
+
+
+    <div class="contact-buttons">
+
+      <a
+        href="tel:+917683973997"
+        class="contact-btn contact-call">
+        📞 Call Now
+      </a>
+
+
+      <a
+        href="https://wa.me/917683973997?text=Hello%20RKB%20TRANSPORT%2C%20I%20need%20transport%20service."
+        target="_blank"
+        class="contact-btn contact-whatsapp">
+        💬 WhatsApp Us
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= BACK ================= -->
+
+  <div class="back-section">
+
+    <a
+      href="index.html"
+      class="back-btn">
       ← Back to RKB WORK
     </a>
 
   </div>
 
+
+  <!-- ================= FOOTER ================= -->
+
   <footer>
-    © 2026 RKB WORK
+
+    <p>
+      © 2026 <strong>RKB WORK</strong> •
+      <strong>RKB TRANSPORT</strong>
+    </p>
+
+    <p style="margin-top:8px;">
+      Transport Services • Reliable • Convenient • Customer Focused
+    </p>
+
   </footer>
+
 
 </body>
 </html>
