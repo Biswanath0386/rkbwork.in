@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RKB ONLINE | CSC Services</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #d1d5db;
+    }
+
+    nav {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 40px 20px 25px;
+    }
+
+    .intro h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .services {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .category {
+      margin-bottom: 35px;
+    }
+
+    .category h2 {
+      background: #111827;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 21px;
+      margin-bottom: 15px;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .service {
+      background: white;
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      text-decoration: none;
+      color: #222;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .service span {
+      color: #777;
+      font-size: 20px;
+    }
+
+    .service:hover {
+      background: #f0f2f5;
+    }
+
+    .note {
+      max-width: 900px;
+      margin: 10px auto 40px;
+      padding: 18px;
+      background: #fff;
+      border-radius: 10px;
+      text-align: center;
+      color: #666;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .contact {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .contact p {
+      color: #d1d5db;
+      margin: 8px;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 13px 22px;
+      background: white;
+      color: #111827;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #0b1120;
+      color: #9ca3af;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        margin: 0 6px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <h1>RKB ONLINE</h1>
+    <p>CSC Centre • Digital & Online Services</p>
+  </header>
+
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="csc-services.html">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+
+  <!-- INTRO -->
+
+  <section class="intro">
+
+    <h2>CSC Services</h2>
+
+    <p>
+      Select the service you need to view
+      details and required documents.
+    </p>
+
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section class="services">
+
+
+    <!-- IDENTITY SERVICES -->
+
+    <div class="category">
+
+      <h2>🪪 Identity & ID Services</h2>
+
+      <div class="service-list">
+
+        <a href="pan.html" class="service">
+          PAN Card
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Aadhaar Services
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Voter ID
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Driving Licence Assistance
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Passport Assistance
+          <span>›</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- CERTIFICATE SERVICES -->
+
+    <div class="category">
+
+      <h2>📄 Certificate Services</h2>
+
+      <div class="service-list">
+
+        <a href="#" class="service">
+          Income Certificate
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Caste Certificate
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Residence Certificate
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Domicile Certificate
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Birth Certificate
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Death Certificate
+          <span>›</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- EDUCATION -->
+
+    <div class="category">
+
+      <h2>🎓 Education & Student Services</h2>
+
+      <div class="service-list">
+
+        <a href="#" class="service">
+          Scholarship
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Online Admission
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Exam Form
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Result / Marksheet
+          <span>›</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- JOB -->
+
+    <div class="category">
+
+      <h2>💼 Job & Online Applications</h2>
+
+      <div class="service-list">
+
+        <a href="#" class="service">
+          Government Job Form
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Job Application
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Online Registration
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Admit Card
+          <span>›</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- BANKING -->
+
+    <div class="category">
+
+      <h2>💳 Banking & Financial Services</h2>
+
+      <div class="service-list">
+
+        <a href="#" class="service">
+          Banking Assistance
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Insurance Assistance
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Money Transfer
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Pension Related Services
+          <span>›</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- DIGITAL -->
+
+    <div class="category">
+
+      <h2>🖨️ Digital & Printing Services</h2>
+
+      <div class="service-list">
+
+        <a href="#" class="service">
+          Online Form Fill-up
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Print
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Scan
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Photocopy
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Lamination
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Passport Photo
+          <span>›</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- GOVERNMENT -->
+
+    <div class="category">
+
+      <h2>🏛️ Government & Citizen Services</h2>
+
+      <div class="service-list">
+
+        <a href="#" class="service">
+          Government Scheme Applications
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Utility Bill Payment
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Citizen Services
+          <span>›</span>
+        </a>
+
+        <a href="#" class="service">
+          Online Government Applications
+          <span>›</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- NOTE -->
+
+  <div class="note">
+
+    <strong>Note:</strong>
+    Required documents may vary according to
+    the service and applicant. Please contact
+    RKB ONLINE for confirmation before applying.
+
+  </div>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <h2>Contact RKB ONLINE</h2>
+
+    <p>📍 AT/PO-TUSAR, 759126</p>
+
+    <p>📞 +91 8908880386</p>
+
+    <a
+      href="https://wa.me/918908880386"
+      class="whatsapp">
+      💬 WhatsApp
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 RKB WORK • RKB ONLINE
+  </footer>
+
+</body>
+</html>
