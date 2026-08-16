@@ -1,1 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RKB WORK</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    header h1 {
+      font-size: 38px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 16px;
+      color: #d1d5db;
+    }
+
+    nav {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: bold;
+      margin: 0 12px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .services {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .services h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .card .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .contact {
+      text-align: center;
+      background: #111827;
+      color: white;
+      margin-top: 50px;
+      padding: 45px 20px;
+    }
+
+    .contact h2 {
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      margin: 8px;
+      color: #d1d5db;
+    }
+
+    footer {
+      text-align: center;
+      background: #0b1120;
+      color: #9ca3af;
+      padding: 18px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>RKB WORK</h1>
+    <p>CSC • Electrical Shop • Transport</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>Welcome to RKB WORK</h2>
+    <p>
+      RKB WORK is your platform for CSC services,
+      electrical products and transport services.
+    </p>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>CSC Services</h3>
+        <p>
+          Digital and online services available through
+          our CSC service center.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Electrical Shop</h3>
+        <p>
+          Electrical products, accessories and related
+          services for your needs.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🚚</div>
+        <h3>Transport</h3>
+        <p>
+          Transport and vehicle-related services
+          available through RKB WORK.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact RKB WORK</h2>
+    <p>For more information, please contact us.</p>
+    <p>RKB WORK • rkbwork.in</p>
+  </section>
+
+  <footer>
+    © 2026 RKB WORK. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
