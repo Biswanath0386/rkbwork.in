@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>RKB WORK</title>
 
   <style>
@@ -19,11 +21,12 @@
 
     body {
       background: #f5f7fa;
-      color: #222;
+      color: #111827;
     }
 
+    /* HEADER */
     header {
-      background: #111827;
+      background: #0f172a;
       color: white;
       text-align: center;
       padding: 45px 20px;
@@ -32,32 +35,41 @@
     header h1 {
       font-size: 42px;
       margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
     header p {
-      color: #d1d5db;
+      color: #cbd5e1;
+      font-size: 16px;
     }
 
+    /* NAVIGATION */
     nav {
       background: white;
-      padding: 16px;
+      padding: 16px 10px;
       text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
     }
 
     nav a {
       color: #111827;
       text-decoration: none;
       font-weight: bold;
-      margin: 0 12px;
+      margin: 0 15px;
+      font-size: 15px;
     }
 
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* HERO */
     .hero {
       text-align: center;
-      padding: 60px 20px 45px;
+      padding: 65px 20px 45px;
     }
 
     .hero h2 {
@@ -66,48 +78,61 @@
     }
 
     .hero p {
-      color: #555;
-      line-height: 1.6;
       max-width: 700px;
       margin: auto;
+      color: #64748b;
+      line-height: 1.7;
+      font-size: 16px;
     }
 
-    .services {
-      max-width: 1100px;
+    /* BUSINESS */
+    .business {
+      max-width: 1150px;
       margin: auto;
-      padding: 25px 20px 60px;
+      padding: 20px 20px 70px;
     }
 
-    .services h2 {
+    .business-title {
       text-align: center;
-      font-size: 30px;
       margin-bottom: 35px;
     }
 
+    .business-title h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .business-title p {
+      color: #64748b;
+    }
+
+    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 25px;
     }
 
     .card {
       background: white;
-      padding: 35px 22px;
-      border-radius: 16px;
+      border-radius: 18px;
+      padding: 35px 25px;
       text-align: center;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
       text-decoration: none;
-      color: #222;
-      display: block;
-      transition: transform 0.2s;
+      color: #111827;
+      box-shadow: 0 5px 20px rgba(15,23,42,0.08);
+      transition: transform 0.25s ease,
+                  box-shadow 0.25s ease;
+      border: 1px solid #eef2f7;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-7px);
+      box-shadow: 0 12px 28px rgba(15,23,42,0.14);
     }
 
     .icon {
-      font-size: 55px;
+      font-size: 58px;
       margin-bottom: 18px;
     }
 
@@ -117,43 +142,91 @@
     }
 
     .card p {
-      color: #666;
+      color: #64748b;
       line-height: 1.6;
+      min-height: 50px;
     }
 
-    .touch {
+    .view {
+      display: inline-block;
       margin-top: 20px;
-      font-size: 14px;
       font-weight: bold;
-      color: #111827;
+      color: #2563eb;
     }
 
+    /* CONTACT */
     .contact {
-      background: #111827;
+      background: #0f172a;
       color: white;
       text-align: center;
-      padding: 45px 20px;
+      padding: 50px 20px;
+    }
+
+    .contact h2 {
+      font-size: 27px;
+      margin-bottom: 20px;
     }
 
     .contact p {
-      color: #d1d5db;
+      color: #cbd5e1;
       margin: 10px;
+      font-size: 16px;
     }
 
+    .contact a {
+      display: inline-block;
+      margin-top: 20px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 13px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      background: #1d4ed8;
+    }
+
+    /* FOOTER */
     footer {
-      background: #0b1120;
-      color: #9ca3af;
+      background: #020617;
+      color: #94a3b8;
       text-align: center;
       padding: 20px;
+      font-size: 14px;
     }
 
+    /* MOBILE */
     @media (max-width: 800px) {
-      .cards {
-        grid-template-columns: 1fr;
+
+      header {
+        padding: 38px 15px;
       }
 
       header h1 {
-        font-size: 36px;
+        font-size: 34px;
+      }
+
+      .hero {
+        padding: 50px 20px 35px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .card {
+        padding: 30px 22px;
+      }
+
+      nav a {
+        margin: 0 9px;
       }
     }
   </style>
@@ -161,70 +234,125 @@
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <h1>RKB WORK</h1>
     <p>CSC • Electrical Shop • Transport</p>
   </header>
 
+
+  <!-- NAVIGATION -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="#services">Services</a>
+    <a href="#home">Home</a>
+    <a href="#business">Services</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section class="hero">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
     <h2>Welcome to RKB WORK</h2>
+
     <p>
       Your trusted platform for CSC services,
       electrical products and transport services.
     </p>
   </section>
 
-  <section class="services" id="services">
 
-    <h2>Our Businesses</h2>
+  <!-- BUSINESS -->
+  <section class="business" id="business">
+
+    <div class="business-title">
+      <h2>Our Businesses</h2>
+      <p>Select a service to continue</p>
+    </div>
+
 
     <div class="cards">
 
+      <!-- RKB ONLINE -->
       <a href="csc.html" class="card">
+
         <div class="icon">💻</div>
+
         <h3>RKB ONLINE</h3>
+
         <p>
-          CSC Centre and digital online services.
+          CSC Centre and digital
+          online services.
         </p>
-        <div class="touch">Tap to view →</div>
+
+        <span class="view">
+          Tap to View →
+        </span>
+
       </a>
 
+
+      <!-- RKB ELECTRICAL -->
       <a href="electrical.html" class="card">
+
         <div class="icon">⚡</div>
+
         <h3>RKB ELECTRICAL</h3>
+
         <p>
-          Electrical products and related services.
+          Electrical products and
+          related services.
         </p>
-        <div class="touch">Tap to view →</div>
+
+        <span class="view">
+          Tap to View →
+        </span>
+
       </a>
 
+
+      <!-- RKB TRANSPORT -->
       <a href="transport.html" class="card">
+
         <div class="icon">🚚</div>
+
         <h3>RKB TRANSPORT</h3>
+
         <p>
-          Transport and vehicle-related services.
+          Transport and vehicle-related
+          services.
         </p>
-        <div class="touch">Tap to view →</div>
+
+        <span class="view">
+          Tap to View →
+        </span>
+
       </a>
 
     </div>
+
   </section>
 
+
+  <!-- CONTACT -->
   <section class="contact" id="contact">
+
     <h2>Contact RKB WORK</h2>
+
     <p>📍 AT/PO-TUSAR, 759126</p>
+
     <p>📞 +91 8908880386</p>
+
+    <a href="tel:+918908880386">
+      📞 Call Now
+    </a>
+
   </section>
 
+
+  <!-- FOOTER -->
   <footer>
     © 2026 RKB WORK. All Rights Reserved.
   </footer>
 
 </body>
 </html>
+```
