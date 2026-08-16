@@ -1,543 +1,1880 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>RKB ONLINE | Aadhaar Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+<title>RKB ONLINE | Aadhaar Services</title>
+
+<meta name="description"
+content="RKB ONLINE Aadhaar Services - Aadhaar enrolment, update, download, status and related assistance.">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.5;
+}
+
+:root{
+    --primary:#0869df;
+    --primary-dark:#063b82;
+    --navy:#061b3a;
+    --blue-light:#eaf4ff;
+    --green:#25d366;
+    --white:#ffffff;
+    --text:#172033;
+    --muted:#6b778c;
+    --border:#e2e8f0;
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.top-header{
+    background:linear-gradient(135deg,#04182f,#073c82);
+    color:#fff;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand-logo{
+    width:48px;
+    height:48px;
+    border:2px solid #35a8ff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:15px;
+    font-weight:900;
+    background:rgba(255,255,255,.08);
+}
+
+.brand-name{
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:.4px;
+}
+
+.brand-subtitle{
+    color:#c6d6eb;
+    font-size:11px;
+    margin-top:2px;
+}
+
+.header-whatsapp{
+    background:var(--green);
+    color:#fff;
+    text-decoration:none;
+    padding:11px 18px;
+    border-radius:8px;
+    font-weight:800;
+    font-size:14px;
+    transition:.3s;
+}
+
+.header-whatsapp:hover{
+    transform:translateY(-2px);
+    box-shadow:0 7px 20px rgba(37,211,102,.25);
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav{
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:999;
+    border-bottom:1px solid var(--border);
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
+}
+
+.nav-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+    min-height:58px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-inner a{
+    position:relative;
+    color:#172033;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+    padding:19px 0;
+}
+
+.nav-inner a:hover,
+.nav-inner a.active{
+    color:var(--primary);
+}
+
+.nav-inner a.active::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:3px;
+    background:var(--primary);
+    border-radius:5px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 90% 20%,rgba(40,160,255,.35),transparent 28%),
+        radial-gradient(circle at 10% 90%,rgba(0,100,255,.25),transparent 28%),
+        linear-gradient(125deg,#04172f,#063e82 60%,#0878d8);
+    color:#fff;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:480px;
+    height:480px;
+    right:-180px;
+    top:-250px;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:50%;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    right:-60px;
+    bottom:-230px;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:50%;
+}
+
+.hero-inner{
+    max-width:1200px;
+    min-height:390px;
+    margin:auto;
+    padding:55px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.hero-content{
+    max-width:650px;
+    position:relative;
+    z-index:2;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:7px 15px;
+    border-radius:6px;
+    background:#0878e9;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:.5px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:52px;
+    line-height:1.05;
+    margin-bottom:10px;
+}
+
+.hero-tagline{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.hero-tagline span{
+    color:#36a9ff;
+    margin:0 7px;
+}
+
+.hero-description{
+    max-width:570px;
+    color:#d8e6f8;
+    font-size:16px;
+    line-height:1.7;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:12px 21px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:800;
+    font-size:14px;
+}
+
+.hero-btn.primary{
+    background:#fff;
+    color:#075fc7;
+}
+
+.hero-btn.whatsapp{
+    background:var(--green);
+    color:#fff;
+}
+
+
+/* =====================================================
+   AADHAAR CARD ILLUSTRATION
+===================================================== */
+
+.aadhaar-card{
+    width:400px;
+    height:245px;
+    background:linear-gradient(135deg,#ffffff,#edf2f7);
+    border-radius:17px;
+    color:#202020;
+    position:relative;
+    box-shadow:0 25px 55px rgba(0,0,0,.35);
+    transform:rotate(-2deg);
+    padding:19px;
+    z-index:2;
+}
+
+.card-heading{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    font-weight:900;
+}
+
+.card-heading span{
+    color:#e66b22;
+}
+
+.card-photo{
+    position:absolute;
+    left:22px;
+    top:62px;
+    width:65px;
+    height:76px;
+    background:#d8dee6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+.card-info{
+    position:absolute;
+    left:105px;
+    top:65px;
+    font-size:10px;
+}
+
+.card-info div{
+    margin-bottom:7px;
+}
+
+.card-number{
+    position:absolute;
+    left:22px;
+    bottom:40px;
+    font-size:19px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.card-bottom{
+    position:absolute;
+    left:22px;
+    right:22px;
+    bottom:12px;
+    border-top:2px solid #df5545;
+    padding-top:5px;
+    font-size:9px;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:55px 20px;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.section-title h2{
+    color:#09234b;
+    font-size:30px;
+}
+
+.section-title h2::after{
+    content:"";
+    display:block;
+    width:45px;
+    height:4px;
+    background:var(--primary);
+    border-radius:10px;
+    margin:10px auto;
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-wrapper{
+    max-width:620px;
+    margin:0 auto 28px;
+    position:relative;
+}
+
+.search-wrapper input{
+    width:100%;
+    border:1px solid var(--border);
+    background:#fff;
+    border-radius:12px;
+    padding:15px 20px 15px 48px;
+    outline:none;
+    font-size:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.search-wrapper input:focus{
+    border-color:#86b9f5;
+    box-shadow:0 0 0 4px rgba(8,105,223,.08);
+}
+
+.search-icon{
+    position:absolute;
+    left:17px;
+    top:11px;
+    font-size:22px;
+}
+
+
+/* =====================================================
+   SERVICE GRID
+===================================================== */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.service-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:20px 15px 16px;
+    text-align:center;
+    position:relative;
+    box-shadow:0 5px 18px rgba(0,0,0,.045);
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-6px);
+    border-color:#b9d7ff;
+    box-shadow:0 16px 30px rgba(8,105,223,.13);
+}
+
+.service-number{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:var(--primary);
+    color:#fff;
+    font-size:10px;
+    font-weight:900;
+    padding:4px 7px;
+    border-radius:5px;
+}
+
+.service-icon{
+    width:62px;
+    height:62px;
+    margin:8px auto 12px;
+    border-radius:50%;
+    background:var(--blue-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:29px;
+}
+
+.service-card h3{
+    min-height:54px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:14px;
+    line-height:1.35;
+}
+
+.service-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 16px;
+    border-radius:20px;
+    color:var(--primary);
+    border:1px solid #cfe0f5;
+    background:#fff;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:800;
+    transition:.25s;
+}
+
+.service-btn:hover{
+    background:var(--primary);
+    border-color:var(--primary);
+    color:#fff;
+}
+
+
+/* Different icon backgrounds */
+
+.service-card:nth-child(2) .service-icon{
+    background:#eafff1;
+}
+
+.service-card:nth-child(3) .service-icon{
+    background:#fff1e6;
+}
+
+.service-card:nth-child(4) .service-icon{
+    background:#f0eaff;
+}
+
+.service-card:nth-child(5) .service-icon{
+    background:#e8fbff;
+}
+
+.service-card:nth-child(6) .service-icon{
+    background:#ffeaf4;
+}
+
+.service-card:nth-child(7) .service-icon{
+    background:#edf2ff;
+}
+
+.service-card:nth-child(8) .service-icon{
+    background:#fff7df;
+}
+
+.service-card:nth-child(9) .service-icon{
+    background:#eaf9ff;
+}
+
+.service-card:nth-child(10) .service-icon{
+    background:#f3edff;
+}
+
+.service-card:nth-child(11) .service-icon{
+    background:#eaf5ff;
+}
+
+.service-card:nth-child(12) .service-icon{
+    background:#eafcef;
+}
+
+.service-card:nth-child(13) .service-icon{
+    background:#fff0eb;
+}
+
+.service-card:nth-child(14) .service-icon{
+    background:#eef0ff;
+}
+
+.service-card:nth-child(15) .service-icon{
+    background:#f1f3f5;
+}
+
+
+/* =====================================================
+   DOCUMENT SECTION
+===================================================== */
+
+.documents{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:15px;
+    margin-top:35px;
+    padding:27px 23px;
+    box-shadow:0 6px 20px rgba(0,0,0,.05);
+}
+
+.documents h2{
+    text-align:center;
+    color:#09234b;
+    margin-bottom:22px;
+    font-size:24px;
+}
+
+.documents ul{
+    list-style:none;
+}
+
+.documents li{
+    padding:13px 8px;
+    border-bottom:1px solid #edf0f4;
+}
+
+.documents li:last-child{
+    border-bottom:none;
+}
+
+.documents strong{
+    display:block;
+    margin-bottom:3px;
+    color:#172033;
+}
+
+.documents span{
+    color:#68758a;
+    font-size:14px;
+}
+
+.note{
+    margin-top:18px;
+    padding:14px 16px;
+    background:#f4f8fd;
+    border-left:4px solid var(--primary);
+    color:#58667a;
+    font-size:13px;
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   WHATSAPP SECTION
+===================================================== */
+
+.apply-section{
+    margin-top:25px;
+    border-radius:15px;
+    padding:35px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#061b3a,#073d83);
+    color:#fff;
+    box-shadow:0 10px 30px rgba(6,27,58,.18);
+}
+
+.apply-section h2{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.apply-section p{
+    color:#d3e0f2;
+    max-width:600px;
+    margin:0 auto 20px;
+}
+
+.whatsapp-main{
+    display:inline-block;
+    background:var(--green);
+    color:#fff;
+    text-decoration:none;
+    padding:14px 25px;
+    border-radius:9px;
+    font-weight:900;
+    transition:.3s;
+}
+
+.whatsapp-main:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(37,211,102,.25);
+}
+
+
+/* =====================================================
+   ALL IN ONE
+===================================================== */
+
+.all-in-one{
+    margin-top:25px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:28px 20px;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.05);
+}
+
+.all-in-one h2{
+    color:#09234b;
+    margin-bottom:8px;
+}
+
+.all-in-one p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+    margin-top:25px;
+    background:linear-gradient(110deg,#063b82,#086edb);
+    color:#fff;
+    border-radius:15px;
+    padding:28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.contact h2{
+    margin-bottom:8px;
+}
+
+.contact p{
+    color:#d8e7f9;
+    margin:4px 0;
+    font-size:14px;
+}
+
+.contact-buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.call-btn,
+.whatsapp-btn{
+    display:inline-block;
+    padding:12px 21px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:800;
+}
+
+.call-btn{
+    background:#fff;
+    color:#075fc5;
+}
+
+.whatsapp-btn{
+    background:var(--green);
+    color:#fff;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-section{
+    text-align:center;
+    margin:28px 0 5px;
+}
+
+.back-section a{
+    color:#17365f;
+    text-decoration:none;
+    font-weight:800;
+    font-size:14px;
+}
+
+.back-section a:hover{
+    color:var(--primary);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#06172f;
+    color:#aab9cd;
+    text-align:center;
+    padding:23px 15px;
+    font-size:13px;
+}
+
+.footer-links{
+    margin-bottom:10px;
+}
+
+.footer-links a{
+    color:#d8e4f3;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:900px){
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    body {
-      background: #f5f7fa;
-      color: #222;
+    .hero-inner{
+        flex-direction:column;
+        text-align:center;
     }
 
-    header {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
+    .hero-description{
+        margin:auto;
     }
 
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 8px;
+    .hero-buttons{
+        justify-content:center;
     }
 
-    header p {
-      color: #d1d5db;
+    .aadhaar-card{
+        width:360px;
+        max-width:100%;
     }
 
-    nav {
-      background: white;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+}
+
+
+@media(max-width:650px){
+
+    .top-header{
+        padding:13px 18px;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #111827;
-      font-weight: bold;
-      margin: 0 10px;
+    .header-whatsapp{
+        display:none;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 18px 50px;
+    .nav-inner{
+        justify-content:flex-start;
+        overflow-x:auto;
+        gap:22px;
     }
 
-    .intro {
-      background: white;
-      text-align: center;
-      padding: 35px 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
+    .nav-inner a{
+        white-space:nowrap;
     }
 
-    .intro .icon {
-      font-size: 55px;
-      margin-bottom: 15px;
+    .hero-inner{
+        padding:45px 18px;
     }
 
-    .intro h2 {
-      font-size: 30px;
-      margin-bottom: 10px;
+    .hero h1{
+        font-size:39px;
     }
 
-    .intro p {
-      color: #666;
-      line-height: 1.6;
+    .hero-tagline{
+        font-size:18px;
     }
 
-    .section-title {
-      text-align: center;
-      margin: 30px 0 20px;
+    .container{
+        padding:42px 15px;
     }
 
-    .section-title h2 {
-      font-size: 27px;
-      margin-bottom: 8px;
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
     }
 
-    .section-title p {
-      color: #666;
+    .service-card{
+        padding:17px 9px 13px;
     }
 
-    .service-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .service-card h3{
+        font-size:12px;
     }
 
-    .service {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: white;
-      color: #111827;
-      text-decoration: none;
-      padding: 18px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-      font-size: 17px;
-      font-weight: bold;
+    .service-icon{
+        width:53px;
+        height:53px;
+        font-size:24px;
     }
 
-    .arrow {
-      font-size: 27px;
-      color: #777;
+    .contact{
+        flex-direction:column;
+        text-align:center;
     }
 
-    .documents {
-      background: white;
-      padding: 25px 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-      margin-top: 25px;
+    .contact-buttons{
+        justify-content:center;
     }
 
-    .documents h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 25px;
+}
+
+
+@media(max-width:430px){
+
+    .brand-name{
+        font-size:20px;
     }
 
-    .documents ul {
-      list-style: none;
+    .brand-logo{
+        width:43px;
+        height:43px;
     }
 
-    .documents li {
-      padding: 15px 8px;
-      border-bottom: 1px solid #eee;
-      line-height: 1.5;
+    .hero h1{
+        font-size:34px;
     }
 
-    .documents li:last-child {
-      border-bottom: none;
+    .aadhaar-card{
+        height:205px;
     }
 
-    .documents strong {
-      display: block;
-      margin-bottom: 4px;
+    .card-photo{
+        width:53px;
+        height:61px;
+        left:18px;
+        top:55px;
     }
 
-    .documents span {
-      color: #666;
-      font-size: 15px;
+    .card-info{
+        left:84px;
+        top:57px;
     }
 
-    .note {
-      margin-top: 18px;
-      background: #f9fafb;
-      border-left: 4px solid #111827;
-      padding: 15px;
-      color: #555;
-      line-height: 1.6;
-      font-size: 14px;
+    .card-number{
+        left:18px;
+        font-size:15px;
     }
 
-    .apply {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 32px 20px;
-      border-radius: 15px;
-      margin-top: 25px;
+    .card-bottom{
+        left:18px;
+        right:18px;
     }
 
-    .apply h2 {
-      margin-bottom: 10px;
+    .documents{
+        padding:22px 15px;
     }
 
-    .apply p {
-      color: #d1d5db;
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
+}
 
-    .whatsapp {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      padding: 14px 25px;
-      border-radius: 8px;
-      font-size: 17px;
-      font-weight: bold;
-    }
+</style>
 
-    .all-in-one {
-      background: white;
-      text-align: center;
-      padding: 28px 20px;
-      border-radius: 15px;
-      margin-top: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-    }
-
-    .all-in-one h2 {
-      margin-bottom: 12px;
-    }
-
-    .all-in-one p {
-      color: #666;
-      line-height: 1.6;
-    }
-
-    .contact {
-      background: #111827;
-      color: white;
-      text-align: center;
-      margin-top: 25px;
-      padding: 30px 20px;
-      border-radius: 15px;
-    }
-
-    .contact h2 {
-      margin-bottom: 12px;
-    }
-
-    .contact p {
-      color: #d1d5db;
-      margin: 7px;
-    }
-
-    .contact-buttons {
-      margin-top: 18px;
-    }
-
-    .call {
-      display: inline-block;
-      background: white;
-      color: #111827;
-      text-decoration: none;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-weight: bold;
-      margin: 5px;
-    }
-
-    footer {
-      background: #0b1120;
-      color: #9ca3af;
-      text-align: center;
-      padding: 20px;
-      margin-top: 0;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 32px;
-      }
-
-      .intro h2 {
-        font-size: 26px;
-      }
-
-      .service {
-        font-size: 16px;
-        padding: 17px 15px;
-      }
-    }
-  </style>
 </head>
+
 
 <body>
 
-  <header>
-    <h1>RKB ONLINE</h1>
-    <p>CSC Centre • Digital & Online Services</p>
-  </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="csc.html">CSC</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-  <main class="container">
+<header class="top-header">
 
-    <section class="intro">
-      <div class="icon">🆔</div>
-      <h2>Aadhaar Services</h2>
-      <p>
-        Aadhaar related services and assistance
-        through RKB ONLINE.
-      </p>
-    </section>
+    <div class="brand">
+
+        <div class="brand-logo">
+            RKB
+        </div>
+
+        <div>
+            <div class="brand-name">
+                RKB ONLINE
+            </div>
+
+            <div class="brand-subtitle">
+                CSC Centre • Digital & Online Services
+            </div>
+        </div>
+
+    </div>
 
 
-    <section>
+    <a
+        class="header-whatsapp"
+        href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE%2C%20I%20need%20Aadhaar%20Service"
+        target="_blank">
 
-      <div class="section-title">
-        <h2>📋 Aadhaar Services</h2>
-        <p>Select the service you need.</p>
-      </div>
+        💬 WhatsApp Us
 
-      <div class="service-list">
+    </a>
 
-        <a href="#" class="service">
-          <span>📝 Child Aadhaar Enrolment / New Aadhaar</span>
-          <span class="arrow">›</span>
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="nav-inner">
+
+        <a href="index.html">
+            Home
         </a>
 
-        <a href="#" class="service">
-          <span>✏️ Aadhaar Name Update</span>
-          <span class="arrow">›</span>
+        <a href="csc.html">
+            CSC
         </a>
 
-        <a href="#" class="service">
-          <span>🏠 Aadhaar Address Update</span>
-          <span class="arrow">›</span>
+        <a href="aadhar.html" class="active">
+            Aadhaar
         </a>
 
-        <a href="#" class="service">
-          <span>📱 Aadhaar Mobile Number Update</span>
-          <span class="arrow">›</span>
+        <a href="#services">
+            Services
         </a>
 
-        <a href="#" class="service">
-          <span>🎂 Aadhaar Date of Birth Update</span>
-          <span class="arrow">›</span>
+        <a href="#contact">
+            Contact
         </a>
 
-        <a href="#" class="service">
-          <span>👤 Aadhaar Gender Update</span>
-          <span class="arrow">›</span>
-        </a>
+    </div>
 
-        <a href="#" class="service">
-          <span>🔗 Aadhaar Mobile Linking</span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="#" class="service">
-          <span>🔗 Aadhaar PAN Linking</span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="#" class="service">
-          <span>📄 Aadhaar Download / e-Aadhaar</span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="#" class="service">
-          <span>🔍 Aadhaar PVC Card</span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="#" class="service">
-          <span>🔐 Aadhaar Lock / Unlock</span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="#" class="service">
-          <span>📊 Aadhaar Update Status</span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="#" class="service">
-          <span>🔎 Aadhaar Enrolment / Update Status</span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="#" class="service">
-          <span>🆔 Aadhaar Number Retrieval / Lost Aadhaar</span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="#" class="service">
-          <span>📋 Other Aadhaar Services</span>
-          <span class="arrow">›</span>
-        </a>
-
-      </div>
-
-    </section>
+</nav>
 
 
-    <!-- AADHAAR UPDATE DOCUMENTS -->
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                🆔 AADHAAR SERVICES
+            </div>
+
+            <h1>
+                Aadhaar Services
+            </h1>
+
+            <div class="hero-tagline">
+                Fast
+                <span>•</span>
+                Secure
+                <span>•</span>
+                Reliable
+            </div>
+
+            <p class="hero-description">
+
+                Aadhaar related services and assistance
+                through <strong>RKB ONLINE</strong>.
+
+                Get professional assistance for Aadhaar
+                enrolment, updates, download, status and
+                other related services.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#services"
+                    class="hero-btn primary">
+
+                    View Services →
+
+                </a>
+
+
+                <a
+                    href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE%2C%20I%20need%20Aadhaar%20Service"
+                    target="_blank"
+                    class="hero-btn whatsapp">
+
+                    💬 WhatsApp Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Aadhaar Card Design -->
+
+        <div class="aadhaar-card">
+
+            <div class="card-heading">
+
+                <span>🇮🇳 GOVERNMENT OF INDIA</span>
+
+                <strong>UIDAI</strong>
+
+            </div>
+
+
+            <div class="card-photo">
+                👤
+            </div>
+
+
+            <div class="card-info">
+
+                <div>
+                    <strong>Name</strong><br>
+                    XXXXXXXX XXXXX
+                </div>
+
+                <div>
+                    <strong>DOB</strong><br>
+                    XX/XX/XXXX
+                </div>
+
+                <div>
+                    <strong>Gender</strong><br>
+                    X
+                </div>
+
+            </div>
+
+
+            <div class="card-number">
+                XXXX XXXX 1234
+            </div>
+
+
+            <div class="card-bottom">
+                मेरा आधार, मेरी पहचान
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="container" id="services">
+
+
+    <div class="section-title">
+
+        <h2>
+            📋 Aadhaar Services
+        </h2>
+
+        <p>
+            Select the service you need
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-wrapper">
+
+        <span class="search-icon">
+            🔍
+        </span>
+
+        <input
+            type="text"
+            id="serviceSearch"
+            placeholder="Search Aadhaar service..."
+            onkeyup="searchServices()">
+
+    </div>
+
+
+    <!-- =================================================
+         15 SERVICES
+    ================================================= -->
+
+    <div class="service-grid">
+
+
+        <!-- 01 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                01
+            </span>
+
+            <div class="service-icon">
+                👶
+            </div>
+
+            <h3>
+                Child Aadhaar Enrolment /
+                New Aadhaar
+            </h3>
+
+            <a
+                href="child-aadhaar.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                02
+            </span>
+
+            <div class="service-icon">
+                ✏️
+            </div>
+
+            <h3>
+                Aadhaar Name Update
+            </h3>
+
+            <a
+                href="aadhaar-name-update.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                03
+            </span>
+
+            <div class="service-icon">
+                🏠
+            </div>
+
+            <h3>
+                Aadhaar Address Update
+            </h3>
+
+            <a
+                href="aadhaar-address-update.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                04
+            </span>
+
+            <div class="service-icon">
+                📱
+            </div>
+
+            <h3>
+                Aadhaar Mobile Number Update
+            </h3>
+
+            <a
+                href="aadhaar-mobile-update.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                05
+            </span>
+
+            <div class="service-icon">
+                🎂
+            </div>
+
+            <h3>
+                Aadhaar Date of Birth Update
+            </h3>
+
+            <a
+                href="aadhaar-dob-update.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                06
+            </span>
+
+            <div class="service-icon">
+                👤
+            </div>
+
+            <h3>
+                Aadhaar Gender Update
+            </h3>
+
+            <a
+                href="aadhaar-gender-update.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                07
+            </span>
+
+            <div class="service-icon">
+                🔗
+            </div>
+
+            <h3>
+                Aadhaar Mobile Linking
+            </h3>
+
+            <a
+                href="aadhaar-mobile-linking.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                08
+            </span>
+
+            <div class="service-icon">
+                🔗
+            </div>
+
+            <h3>
+                Aadhaar PAN Linking
+            </h3>
+
+            <a
+                href="aadhaar-pan-linking.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                09
+            </span>
+
+            <div class="service-icon">
+                📄
+            </div>
+
+            <h3>
+                Aadhaar Download /
+                e-Aadhaar
+            </h3>
+
+            <a
+                href="aadhaar-download.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                10
+            </span>
+
+            <div class="service-icon">
+                💳
+            </div>
+
+            <h3>
+                Aadhaar PVC Card
+            </h3>
+
+            <a
+                href="aadhaar-pvc.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                11
+            </span>
+
+            <div class="service-icon">
+                🔐
+            </div>
+
+            <h3>
+                Aadhaar Lock / Unlock
+            </h3>
+
+            <a
+                href="aadhaar-lock-unlock.html"
+                class="service-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                12
+            </span>
+
+            <div class="service-icon">
+                📊
+            </div>
+
+            <h3>
+                Aadhaar Update Status
+            </h3>
+
+            <a
+                href="aadhaar-update-status.html"
+                class="service-btn">
+
+                Check Status →
+
+            </a>
+
+        </div>
+
+
+        <!-- 13 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                13
+            </span>
+
+            <div class="service-icon">
+                🔎
+            </div>
+
+            <h3>
+                Aadhaar Enrolment /
+                Update Status
+            </h3>
+
+            <a
+                href="aadhaar-enrolment-status.html"
+                class="service-btn">
+
+                Check Status →
+
+            </a>
+
+        </div>
+
+
+        <!-- 14 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                14
+            </span>
+
+            <div class="service-icon">
+                🆔
+            </div>
+
+            <h3>
+                Aadhaar Number Retrieval /
+                Lost Aadhaar
+            </h3>
+
+            <a
+                href="aadhaar-retrieval.html"
+                class="service-btn">
+
+                Get Assistance →
+
+            </a>
+
+        </div>
+
+
+        <!-- 15 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                15
+            </span>
+
+            <div class="service-icon">
+                📋
+            </div>
+
+            <h3>
+                Other Aadhaar Services
+            </h3>
+
+            <a
+                href="other-aadhaar-services.html"
+                class="service-btn">
+
+                View Service →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =================================================
+         DOCUMENTS
+    ================================================= -->
 
     <section class="documents">
 
-      <h2>📄 Aadhaar Update – Related Documents</h2>
+        <h2>
+            📄 Aadhaar Update – Related Documents
+        </h2>
 
-      <ul>
+        <ul>
 
-        <li>
-          <strong>Identity Proof</strong>
-          <span>
-            (Aadhaar Card / other applicable identity document)
-          </span>
-        </li>
+            <li>
 
-        <li>
-          <strong>Address Proof</strong>
-          <span>
-            (Applicable Proof of Address)
-          </span>
-        </li>
+                <strong>
+                    Identity Proof
+                </strong>
 
-        <li>
-          <strong>Date of Birth Proof</strong>
-          <span>
-            (Applicable Date of Birth document, where required)
-          </span>
-        </li>
+                <span>
+                    Aadhaar Card / other applicable
+                    identity document
+                </span>
 
-        <li>
-          <strong>Applicant Details</strong>
-          <span>
-            (Full Name, Aadhaar Number and other required details)
-          </span>
-        </li>
+            </li>
 
-        <li>
-          <strong>Mobile Number</strong>
-          <span>
-            (Active Mobile Number)
-          </span>
-        </li>
 
-        <li>
-          <strong>Email</strong>
-          <span>
-            (Email ID, where applicable)
-          </span>
-        </li>
+            <li>
 
-        <li>
-          <strong>Child Enrolment</strong>
-          <span>
-            (Child and parent/guardian details and applicable documents)
-          </span>
-        </li>
+                <strong>
+                    Address Proof
+                </strong>
 
-      </ul>
+                <span>
+                    Applicable Proof of Address
+                </span>
 
-      <div class="note">
-        <strong>Note:</strong>
-        Required documents and eligibility may vary
-        depending on the Aadhaar service and applicant.
-        Please confirm the applicable requirements
-        before applying.
-      </div>
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Date of Birth Proof
+                </strong>
+
+                <span>
+                    Applicable Date of Birth document,
+                    where required
+                </span>
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Applicant Details
+                </strong>
+
+                <span>
+                    Full Name, Aadhaar Number and
+                    other required details
+                </span>
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Mobile Number
+                </strong>
+
+                <span>
+                    Active Mobile Number
+                </span>
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Email
+                </strong>
+
+                <span>
+                    Email ID, where applicable
+                </span>
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Child Enrolment
+                </strong>
+
+                <span>
+                    Child and parent/guardian details
+                    and applicable documents
+                </span>
+
+            </li>
+
+        </ul>
+
+
+        <div class="note">
+
+            <strong>Note:</strong>
+
+            Required documents and eligibility may vary
+            depending on the Aadhaar service and applicant.
+            Please confirm the applicable requirements
+            before applying.
+
+        </div>
 
     </section>
 
 
-    <!-- WHATSAPP APPLY -->
+    <!-- =================================================
+         WHATSAPP
+    ================================================= -->
 
-    <section class="apply">
+    <section class="apply-section">
 
-      <h2>📱 Apply Aadhaar Service</h2>
+        <h2>
+            📱 Apply Aadhaar Service
+        </h2>
 
-      <p>
-        Need Aadhaar assistance? Send us a WhatsApp
-        message and tell us which Aadhaar service you need.
-      </p>
+        <p>
+            Need Aadhaar assistance? Send us a WhatsApp
+            message and tell us which Aadhaar service
+            you need.
+        </p>
 
-      <a
-        class="whatsapp"
-        href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE%2C%20I%20want%20Aadhaar%20Service"
-        target="_blank">
-        💬 WhatsApp – Apply Aadhaar
-      </a>
+
+        <a
+            href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE%2C%20I%20want%20Aadhaar%20Service"
+            target="_blank"
+            class="whatsapp-main">
+
+            💬 WhatsApp – Apply Aadhaar
+
+        </a>
 
     </section>
 
 
-    <!-- ALL IN ONE -->
+    <!-- =================================================
+         ALL IN ONE
+    ================================================= -->
 
     <section class="all-in-one">
 
-      <h2>⭐ All in One</h2>
+        <h2>
+            ⭐ All in One
+        </h2>
 
-      <p>
-        Aadhaar Enrolment, Updates, Download,
-        Status and other Aadhaar related assistance
-        available through RKB ONLINE.
-      </p>
+        <p>
+
+            Aadhaar Enrolment, Updates, Download,
+            Status and other Aadhaar related assistance
+            available through RKB ONLINE.
+
+        </p>
 
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- =================================================
+         CONTACT
+    ================================================= -->
 
     <section class="contact" id="contact">
 
-      <h2>📞 Contact RKB ONLINE</h2>
+        <div>
 
-      <p>📍 AT/PO-TUSAR, 759126</p>
+            <h2>
+                📞 Contact RKB ONLINE
+            </h2>
 
-      <p>📱 +91 8908880386</p>
+            <p>
+                📍 AT/PO-TUSAR, 759126
+            </p>
 
-      <div class="contact-buttons">
+            <p>
+                📱 +91 8908880386
+            </p>
 
-        <a
-          class="call"
-          href="tel:+918908880386">
-          📞 Call Now
-        </a>
+        </div>
 
-        <a
-          class="whatsapp"
-          href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE"
-          target="_blank">
-          💬 WhatsApp
-        </a>
 
-      </div>
+        <div class="contact-buttons">
+
+            <a
+                href="tel:+918908880386"
+                class="call-btn">
+
+                📞 Call Now
+
+            </a>
+
+
+            <a
+                href="https://wa.me/918908880386?text=Hello%20RKB%20ONLINE"
+                target="_blank"
+                class="whatsapp-btn">
+
+                💬 WhatsApp
+
+            </a>
+
+        </div>
 
     </section>
 
-<div style="text-align:center; margin:25px 0;">
-  <a href="csc.html"
-     style="text-decoration:none; color:#111827; font-weight:bold;">
-    ← Back to CSC Services
-  </a>
-</div>
 
-  </main>
+    <!-- BACK -->
+
+    <div class="back-section">
+
+        <a href="csc.html">
+
+            ← Back to CSC Services
+
+        </a>
+
+    </div>
+
+</main>
 
 
-  <footer>
-    © 2026 RKB WORK • RKB ONLINE
-  </footer>
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="csc.html">CSC</a>
+
+        <a href="aadhar.html">Aadhaar</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+
+    <p>
+        © 2026 RKB WORK • RKB ONLINE
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     SEARCH JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function searchServices(){
+
+    const search =
+        document
+        .getElementById("serviceSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const cards =
+        document.querySelectorAll(".service-card");
+
+    cards.forEach(function(card){
+
+        const text =
+            card.innerText.toLowerCase();
+
+        if(text.includes(search)){
+
+            card.style.display = "";
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
 
 </body>
 </html>
